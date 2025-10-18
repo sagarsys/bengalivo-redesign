@@ -19,7 +19,6 @@ export function NewsletterPopup() {
     // Check if user has already subscribed or dismissed
     const hasSubscribed = localStorage.getItem('newsletter-subscribed');
     const hasDismissed = localStorage.getItem('newsletter-dismissed');
-    const lastInteraction = localStorage.getItem('newsletter-last-interaction');
     
     if (hasSubscribed || hasDismissed) {
       return;

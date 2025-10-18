@@ -55,8 +55,8 @@ export default function AdminCatsPage() {
       if (!res.ok) throw new Error('Failed to fetch cats');
       const data: Cat[] = await res.json();
       setCats(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
@@ -97,8 +97,8 @@ export default function AdminCatsPage() {
       });
       if (!res.ok) throw new Error('Failed to delete cat');
       fetchCats();
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     }
   };
 
@@ -118,8 +118,8 @@ export default function AdminCatsPage() {
       setEditingCat(null);
       setIsNew(false);
       fetchCats();
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     }
   };
 

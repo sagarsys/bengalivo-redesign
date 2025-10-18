@@ -2,14 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Heart, Star, Users, Leaf, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Heart, Shield, Star, Users, ArrowRight, BookOpen, Award, Leaf, Mail, MapPin } from "lucide-react";
-import Link from "next/link";
-import { useTranslation } from 'react-i18next';
 
 export default function AboutPage() {
-  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen py-12">

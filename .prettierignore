@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+*.config.js
+*.config.ts
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.md
+*.json
+*.sql
+*.db

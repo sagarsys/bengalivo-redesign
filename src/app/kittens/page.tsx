@@ -1,13 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Heart, Filter, Search, Calendar, MapPin, Phone, Mail } from "lucide-react";
+import { Heart, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -88,22 +85,7 @@ const plannedLitters = [
 ];
 
 export default function KittensPage() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [genderFilter, setGenderFilter] = useState("all");
-  const [colorFilter, setColorFilter] = useState("all");
-  const [availabilityFilter, setAvailabilityFilter] = useState("available");
 
-  const filteredKittens = kittens.filter(kitten => {
-    const matchesSearch = kitten.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         kitten.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesGender = genderFilter === "all" || kitten.gender.toLowerCase() === genderFilter;
-    const matchesColor = colorFilter === "all" || kitten.color.toLowerCase().includes(colorFilter.toLowerCase());
-    const matchesAvailability = availabilityFilter === "all" || 
-                               (availabilityFilter === "available" && kitten.available) ||
-                               (availabilityFilter === "reserved" && !kitten.available);
-    
-    return matchesSearch && matchesGender && matchesColor && matchesAvailability;
-  });
 
   // Structured data for SEO
   const structuredData = {
@@ -112,8 +94,8 @@ export default function KittensPage() {
     "name": "Available Bengal Kittens",
     "description": "Beautiful Bengal kittens available for adoption from Bengalivo cattery",
     "url": "https://bengalivo.com/kittens",
-    "numberOfItems": filteredKittens.length,
-    "itemListElement": filteredKittens.map((kitten, index) => ({
+    "numberOfItems": kittens.length,
+    "itemListElement": kittens.map((kitten, index) => ({
       "@type": "Product",
       "position": index + 1,
       "name": kitten.name,
@@ -265,7 +247,7 @@ export default function KittensPage() {
           
           <div className="text-center mb-8">
             <p className="text-muted-foreground mb-4">
-              <em>Follow our Group on Facebook to see the latest photo's and video's</em>
+              <em>Follow our Group on Facebook to see the latest photo&apos;s and video&apos;s</em>
             </p>
             <p className="text-muted-foreground">
               <strong>– Update 01 october 2025 –</strong>

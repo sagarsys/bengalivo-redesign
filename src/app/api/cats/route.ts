@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const featured = searchParams.get('featured')
     const available = searchParams.get('available')
 
-    let whereClause: any = {}
+    const whereClause: Record<string, unknown> = {}
     
     if (type) {
       whereClause.type = type

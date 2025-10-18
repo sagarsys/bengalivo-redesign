@@ -2,15 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, Shield, Star, Users, ArrowRight, Award, Home, Phone, Mail, PawPrint, TreePine, Baby } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import { useTranslation } from 'react-i18next';
+import { Home, Mail, PawPrint, TreePine, Baby } from "lucide-react";
 
 export default function AboutUsPage() {
-  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen py-12">
@@ -69,7 +64,7 @@ export default function AboutUsPage() {
               </p>
               
               <p>
-                In my cattery several rooms are available like a "nursing room" (for the girls to give labour and stay apart from the rest) and "kitten area" (special area where the kittens can stay till they leave to their new home and were they have a big play area and can go outside in the outdoor enclosure). The kittens are staying in the living room from 5 weeks onwards to get used to a normal house situation 😉
+                In my cattery several rooms are available like a &quot;nursing room&quot; (for the girls to give labour and stay apart from the rest) and &quot;kitten area&quot; (special area where the kittens can stay till they leave to their new home and were they have a big play area and can go outside in the outdoor enclosure). The kittens are staying in the living room from 5 weeks onwards to get used to a normal house situation 😉
               </p>
             </div>
           </div>

@@ -27,7 +27,7 @@ interface PageContent {
 }
 
 export default function ContentManagement() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const [content, setContent] = useState<PageContent[]>([]);
   const [editingItem, setEditingItem] = useState<PageContent | null>(null);

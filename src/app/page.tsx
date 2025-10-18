@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Heart, Shield, Star, Phone, PawPrint, Facebook, Instagram } from "lucide-react";
+import { ArrowRight, Heart, PawPrint, Facebook, Instagram, Star } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from 'react-i18next';
@@ -25,21 +24,10 @@ interface PageContent {
   order: number;
 }
 
-interface Cat {
-  id: string;
-  name: string;
-  fullName?: string;
-  nickname?: string;
-  type: string;
-  gender: string;
-  achievements?: string;
-  isFeatured: boolean;
-}
 
 export default function Home() {
   const { t } = useTranslation();
-  const [content, setContent] = useState<PageContent[]>([]);
-  const [featuredCat, setFeaturedCat] = useState<Cat | null>(null);
+  const [, setContent] = useState<PageContent[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -66,9 +54,6 @@ export default function Home() {
     fetchData();
   }, []);
 
-  const getContent = (section: string) => {
-    return content.find(c => c.section === section);
-  };
 
   if (loading) {
     return (
@@ -82,16 +67,8 @@ export default function Home() {
   }
 
   // Dynamic content from database
-  const kittensContent = getContent('kittens');
-  const featuredContent = getContent('featured');
   
   // Static content (hardcoded - matches original website exactly)
-  const heroContent = {
-    title: 'Bengalivo',
-    subtitle: 'Breeding black tabby and snow bengals',
-    buttonText: 'LEARN MORE',
-    buttonLink: '/kittens'
-  };
   
   const whoWeAreContent = {
     title: 'WHO WE ARE',
@@ -309,7 +286,7 @@ export default function Home() {
             className="mb-8 sm:mb-12"
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 px-4">
-              We're Social!
+              We&apos;re Social!
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4 mb-8">
               Follow us on social media for the latest updates, photos, and news about our Bengal cats!

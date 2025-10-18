@@ -59,7 +59,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(filteredCats);
-  } catch (error) {
+    } catch {
     return NextResponse.json(
       { error: 'Failed to fetch retired cats' },
       { status: 500 }
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
     retiredCats.push(newCat);
 
     return NextResponse.json(newCat, { status: 201 });
-  } catch (error) {
+    } catch {
     return NextResponse.json(
       { error: 'Failed to create retired cat' },
       { status: 500 }

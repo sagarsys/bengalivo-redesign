@@ -60,7 +60,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(filteredKittens);
-  } catch (error) {
+    } catch {
     return NextResponse.json(
       { error: 'Failed to fetch kittens' },
       { status: 500 }
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
     kittens.push(newKitten);
 
     return NextResponse.json(newKitten, { status: 201 });
-  } catch (error) {
+    } catch {
     return NextResponse.json(
       { error: 'Failed to create kitten' },
       { status: 500 }
