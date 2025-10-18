@@ -38,12 +38,6 @@ export default function Home() {
         const contentData = await contentResponse.json();
         setContent(contentData);
 
-        // Fetch featured cat
-        const catResponse = await fetch('/api/cats?featured=true');
-        const catData = await catResponse.json();
-        if (catData.length > 0) {
-          setFeaturedCat(catData[0]);
-        }
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {

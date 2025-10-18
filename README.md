@@ -1,42 +1,50 @@
 # Bengalivo - Premium Bengal Cat Breeder Website
 
-A modern, elegant website for a Bengal cat breeder built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui.
+A modern, elegant website for a Bengal cat breeder built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui. This is a complete redesign of the original Bengalivo website (https://bengalivo.com/) with enhanced functionality and modern design.
 
 ## Features
 
 - **Elegant Design**: Black-based theme with gold accents for a classy, premium feel
-- **Responsive**: Fully responsive design that works on all devices
+- **Responsive**: Fully responsive design that works on all devices (desktop, tablet, mobile)
 - **Interactive**: Smooth animations and transitions using Framer Motion
 - **Content Management**: Simple admin dashboard for managing cats and kittens
 - **Authentication**: NextAuth.js integration for secure admin access
+- **Internationalization**: Multi-language support (English/Dutch) with react-i18next
+- **SEO Optimized**: Comprehensive SEO with structured data, sitemap, and meta tags
+- **Image Optimization**: Next.js Image component with automatic optimization
+- **Database Integration**: SQLite with Prisma ORM for data persistence
 - **Modern Stack**: Built with the latest web technologies
 
 ## Pages
 
-- **Home**: Hero section with new litters showcase
-- **Kittens for Sale**: Available kittens with filtering and detailed profiles
-- **Retired Cats**: Retired breeding cats available for adoption
-- **Breeder Cats**: Information about breeding cats with lineage details
-- **About Bengals**: Comprehensive information about Bengal cats
-- **Contact**: Contact form and location information
+- **Home**: Slideshow hero section with featured content and social media integration
+- **About Us**: Information about the cattery and breeder (Ivonne van Dreumel)
+- **The Bengal**: Comprehensive information about Bengal cat breed
+- **Kittens**: Available kittens, retired cats, and planned litters
+- **Breeder Cats**: Detailed information about breeding cats with lineage and genetics
+- **Contact**: Contact form, location information, and newsletter signup
 - **Admin Dashboard**: Content management for authenticated users
 
 ## Technology Stack
 
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **UI Components**: shadcn/ui
 - **Animations**: Framer Motion
 - **Authentication**: NextAuth.js
+- **Database**: SQLite with Prisma ORM
+- **Internationalization**: react-i18next
 - **Icons**: Lucide React
+- **Code Quality**: ESLint, Prettier, Unicorn
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 20+ 
 - npm or yarn
+- Google OAuth credentials for admin login
 
 ### Installation
 
@@ -54,18 +62,26 @@ npm install
 3. Set up environment variables:
 Create a `.env.local` file in the root directory:
 ```env
+DATABASE_URL="file:./dev.db"
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your-secret-key-here
 GOOGLE_CLIENT_ID=your-google-client-id
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 ```
 
-4. Run the development server:
+4. Set up the database:
+```bash
+npm run db:generate
+npm run db:push
+npm run db:seed
+```
+
+5. Run the development server:
 ```bash
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Google OAuth Setup
 
@@ -94,19 +110,33 @@ The admin dashboard is accessible at `/admin` for authenticated users. To access
 src/
 ├── app/                    # Next.js App Router pages
 │   ├── api/               # API routes
+│   │   ├── auth/          # NextAuth.js authentication
+│   │   ├── cats/          # Cat management API
+│   │   ├── content/       # Content management API
+│   │   └── upload/        # Image upload API
 │   ├── admin/             # Admin dashboard
+│   │   ├── cats/          # Cat management
+│   │   └── content/       # Content management
+│   ├── about/             # About Bengal cats page
+│   ├── about-us/          # About the cattery page
 │   ├── kittens/           # Kittens page
-│   ├── retired/           # Retired cats page
 │   ├── breeders/          # Breeder cats page
-│   ├── about/             # About page
 │   ├── contact/           # Contact page
+│   ├── robots.ts          # SEO robots.txt
+│   ├── sitemap.ts         # SEO sitemap
 │   └── globals.css        # Global styles
 ├── components/            # Reusable components
 │   ├── ui/               # shadcn/ui components
-│   ├── navigation.tsx    # Main navigation
+│   ├── navigation.tsx    # Main navigation with i18n
 │   ├── footer.tsx        # Footer component
-│   └── user-provider.tsx # Auth0 user provider
-└── lib/                  # Utility functions
+│   ├── slideshow.tsx     # Homepage slideshow
+│   ├── cookie-banner.tsx # GDPR cookie banner
+│   ├── newsletter-popup.tsx # Newsletter signup popup
+│   └── i18n-provider.tsx # Internationalization provider
+├── lib/                  # Utility functions
+│   ├── db.ts            # Database connection
+│   └── utils.ts         # Utility functions
+└── i18n.ts              # Internationalization configuration
 ```
 
 ## Customization
@@ -121,12 +151,20 @@ The design system is defined in `src/app/globals.css`. The main colors are:
 ### Content Management
 
 The admin dashboard allows you to:
-- Add/edit/delete kittens
-- Manage retired cats
-- Update breeder information
-- All changes are currently stored in memory (mock data)
+- Add/edit/delete kittens, retired cats, and breeder cats
+- Manage page content dynamically
+- Upload and manage images
+- All changes are stored in SQLite database with Prisma ORM
 
-For production, you'll want to integrate with a database like:
+### Database
+
+The application uses SQLite with Prisma ORM for data persistence:
+- **Cats**: Kitten, retired, and breeder cat information
+- **Content**: Dynamic page content management
+- **Images**: File upload and management
+- **Authentication**: NextAuth.js session management
+
+For production, you can easily migrate to:
 - Vercel Postgres
 - Supabase
 - PlanetScale
@@ -149,16 +187,32 @@ The app can be deployed to any platform that supports Next.js:
 - Render
 - AWS Amplify
 
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+- `npm run type-check` - Run TypeScript type checking
+- `npm run db:generate` - Generate Prisma client
+- `npm run db:push` - Push database schema
+- `npm run db:seed` - Seed database with initial data
+
 ## Future Enhancements
 
-- [ ] Database integration for persistent data
-- [ ] Image upload functionality
+- [x] Database integration for persistent data
+- [x] Image upload functionality
+- [x] Newsletter subscription
+- [x] Social media integration
+- [x] SEO optimization
 - [ ] Email notifications for contact form
 - [ ] Blog section for cat care tips
-- [ ] Newsletter subscription
-- [ ] Social media integration
-- [ ] SEO optimization
 - [ ] Analytics integration
+- [ ] Advanced search and filtering
+- [ ] Mobile app
 
 ## Contributing
 
