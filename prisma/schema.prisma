@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model PageContent {
+  id          String   @id @default(cuid())
+  page        String   // "home", "about", "contact", etc.
+  section     String   // "hero", "kittens", "featured", etc.
+  title       String?
+  subtitle    String?
+  content     String?
+  imageUrl    String?
+  buttonText  String?
+  buttonLink  String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([page, section])
+  @@map("page_content")
+}
+
+model Cat {
+  id            String   @id @default(cuid())
+  name          String
+  fullName      String?  // Full registered name
+  nickname      String?  // aka Eos
+  type          String   // "kitten", "breeder", "retired"
+  gender        String   // "male", "female"
+  color         String?
+  age           String?
+  price         String?
+  description   String?
+  achievements  String?  // "21th Best Allbreed Cat of TICA 2021-2022"
+  father        String?
+  mother        String?
+  imageUrl      String?
+  isAvailable   Boolean  @default(true)
+  isFeatured    Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("cats")
+}
+
+model ContactInfo {
+  id        String   @id @default(cuid())
+  type      String   @unique // "email", "phone", "location"
+  value     String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_info")
+}
+
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@map("newsletter")
+}

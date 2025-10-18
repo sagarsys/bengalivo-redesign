@@ -1,0 +1,92 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "kittens": "Kittens",
+    "breederCats": "Breeder cats",
+    "theBengal": "The Bengal",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Bengalivo",
+    "subtitle": "Breeding black tabby and snow bengals",
+    "learnMore": "LEARN MORE",
+    "kittensAvailable": "KITTENS AVAILABLE",
+    "kittensDescription": "For more pictures of the current kittens.....",
+    "kittensButton": "I want to look at those CUTIES!",
+    "featuredCat": "Home of LA SGC Bengalivo Million Reasons",
+    "featuredCatTitle": "21th Best Allbreed Cat of TICA 2021-2022",
+    "featuredCatName": "IW SGC Bengalivo Million Reasons aka Eos",
+    "readMore": "READ more"
+  },
+  "about": {
+    "title": "About Bengal Cats",
+    "subtitle": "Discover the fascinating world of Bengal cats - a unique breed that combines the wild beauty of their ancestors with the loving temperament of domestic cats."
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "subtitle": "Learn about our cattery, our breeding philosophy, and our commitment to producing healthy, well-socialized Bengal cats.",
+    "whoWeAreTitle": "WHO WE ARE",
+    "whoWeAreContent": "My name is Ivonne van Dreumel and since 2004 owner of Bengal cats. I live in Drunen which is in the southern part of the Netherlands. Since 2004 my addiction for Bengals started and in 2006 I started breeding with the bengals.",
+    "whoWeAreContent2": "Our cattery is dedicated to breeding healthy, well-socialized Bengal cats that embody the perfect balance of wild beauty and domestic temperament. We focus on producing cats with excellent health, outstanding character, and the distinctive wild look that makes Bengals so special.",
+    "learnAboutBengals": "Learn About Bengal Cats",
+    "catteryPhoto": "Cattery Photo",
+    "whatWeStandForTitle": "What we stand for!",
+    "whatWeStandForSubtitle": "Our core values and breeding philosophy guide everything we do.",
+    "healthTitle": "Health",
+    "healthDescription": "All breeding cats will be screened for HCM and PKD around the age of 1 year. HCM screening will also be repeated each year for the boys and each 2 year for girls. Also the breeding cats are tested for PKdef and PRA-b. The kittens stay with their mother till they leave to the new owner at the age of 13 – 16 weeks. The kittens receive 2 vaccinations (9 & 12 weeks) and will be dewormed several times.",
+    "characterTitle": "Character",
+    "characterDescription": "Regularly there are kittens born and raised in the house. Socialization is something which I find most important, and therefore a lot of time is spend on this during the time the kittens are living with me. Next to it I find it important that there is a match between the future owners and the character of the Bengal cat.",
+    "wildLookTitle": "Wild look",
+    "wildLookDescription": "Priorities are \"no rib bars\" and \"small rosettes\", \"a strong and energetic but elegant cat\". Breeding bengals who have the wild look is one of my new goals. The most important is to reach this goal by working together with other catteries.",
+    "achievementsTitle": "Our Achievements",
+    "achievementsSubtitle": "Recognition and standards that set us apart in Bengal cat breeding.",
+    "contactTitle": "Get in Touch",
+    "contactSubtitle": "Ready to welcome a Bengal cat into your family? We'd love to hear from you and answer any questions you may have.",
+    "contactUs": "Contact Us",
+    "viewKittens": "View Available Kittens"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "How to get in touch?",
+    "description": "Preferred way to get in contact, is by sending an e-mail. I will respond to your emails as soon as possible, usually within 24 hours. Thank you !",
+    "email": "catterybengalivo@gmail.com",
+    "location": "Drunen - NL",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Do you want to receive the lastest updates in you mailbox? Subscribe to our newsletter and stay in touch!",
+      "placeholder": "Leave this field empty if you're human:"
+    }
+  },
+  "footer": {
+    "copyright": "© Copyright BENGALIVO"
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.",
+    "settings": "Settings",
+    "necessary": "Necessary Only",
+    "acceptAll": "Accept All",
+    "preferences": "Cookie Preferences",
+    "necessaryTitle": "Necessary Cookies",
+    "necessaryDesc": "Essential for the website to function properly. Cannot be disabled.",
+    "analyticsTitle": "Analytics Cookies",
+    "analyticsDesc": "Help us understand how visitors interact with our website.",
+    "marketingTitle": "Marketing Cookies",
+    "marketingDesc": "Used to track visitors across websites for advertising purposes.",
+    "cancel": "Cancel",
+    "save": "Save Preferences"
+  },
+  "newsletter": {
+    "popupTitle": "Stay Updated!",
+    "popupDescription": "Get the latest updates about our Bengal cats, new litters, and special offers delivered to your inbox!",
+    "emailPlaceholder": "Enter your email address",
+    "subscribing": "Subscribing...",
+    "subscribe": "Subscribe Now",
+    "benefit1": "Exclusive photos of new litters",
+    "benefit2": "Special offers and discounts",
+    "benefit3": "No spam, unsubscribe anytime",
+    "successTitle": "Welcome to our family!",
+    "successMessage": "Thank you for subscribing! You'll receive our latest updates soon."
+  }
+}

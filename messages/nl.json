@@ -1,0 +1,92 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "Over ons",
+    "kittens": "Kittens",
+    "breederCats": "Fokkatten",
+    "theBengal": "De Bengal",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Bengalivo",
+    "subtitle": "Fokken van zwarte tabby en sneeuw bengalen",
+    "learnMore": "MEER WETEN",
+    "kittensAvailable": "KITTENS BESCHIKBAAR",
+    "kittensDescription": "Voor meer foto's van de huidige kittens.....",
+    "kittensButton": "Ik wil naar die SCHATTEN kijken!",
+    "featuredCat": "Thuis van LA SGC Bengalivo Million Reasons",
+    "featuredCatTitle": "21e Beste Allbreed Kat van TICA 2021-2022",
+    "featuredCatName": "IW SGC Bengalivo Million Reasons aka Eos",
+    "readMore": "LEES meer"
+  },
+  "about": {
+    "title": "Over Bengal Katten",
+    "subtitle": "Ontdek de fascinerende wereld van Bengal katten - een uniek ras dat de wilde schoonheid van hun voorouders combineert met het liefdevolle temperament van huiskatten."
+  },
+  "aboutUs": {
+    "title": "Over Ons",
+    "subtitle": "Leer over onze cattery, onze fokfilosofie en onze toewijding aan het produceren van gezonde, goed gesocialiseerde Bengal katten.",
+    "whoWeAreTitle": "WIE WE ZIJN",
+    "whoWeAreContent": "Mijn naam is Ivonne van Dreumel en sinds 2004 eigenaar van Bengal katten. Ik woon in Drunen dat in het zuiden van Nederland ligt. Sinds 2004 begon mijn verslaving voor Bengals en in 2006 begon ik met fokken van de bengalen.",
+    "whoWeAreContent2": "Onze cattery is toegewijd aan het fokken van gezonde, goed gesocialiseerde Bengal katten die de perfecte balans belichamen tussen wilde schoonheid en huiskat temperament. We richten ons op het produceren van katten met uitstekende gezondheid, uitstekend karakter en de onderscheidende wilde uitstraling die Bengals zo speciaal maakt.",
+    "learnAboutBengals": "Leer Over Bengal Katten",
+    "catteryPhoto": "Cattery Foto",
+    "whatWeStandForTitle": "Waar we voor staan!",
+    "whatWeStandForSubtitle": "Onze kernwaarden en fokfilosofie begeleiden alles wat we doen.",
+    "healthTitle": "Gezondheid",
+    "healthDescription": "Alle fokkatten worden gescreend op HCM en PKD rond de leeftijd van 1 jaar. HCM screening wordt ook elk jaar herhaald voor de jongens en elke 2 jaar voor meisjes. Ook de fokkatten worden getest op PKdef en PRA-b. De kittens blijven bij hun moeder totdat ze naar de nieuwe eigenaar gaan op de leeftijd van 13 – 16 weken. De kittens krijgen 2 vaccinaties (9 & 12 weken) en worden meerdere keren ontwormd.",
+    "characterTitle": "Karakter",
+    "characterDescription": "Regelmatig worden er kittens geboren en opgevoed in het huis. Socialisatie is iets wat ik het belangrijkst vind, en daarom wordt er veel tijd aan besteed tijdens de tijd dat de kittens bij mij wonen. Daarnaast vind ik het belangrijk dat er een match is tussen de toekomstige eigenaren en het karakter van de Bengal kat.",
+    "wildLookTitle": "Wilde uitstraling",
+    "wildLookDescription": "Prioriteiten zijn \"geen ribbalken\" en \"kleine rozetten\", \"een sterke en energieke maar elegante kat\". Het fokken van bengalen die de wilde uitstraling hebben is een van mijn nieuwe doelen. Het belangrijkste is om dit doel te bereiken door samen te werken met andere catteries.",
+    "achievementsTitle": "Onze Prestaties",
+    "achievementsSubtitle": "Erkenning en standaarden die ons onderscheiden in Bengal kat fokkerij.",
+    "contactTitle": "Neem Contact Op",
+    "contactSubtitle": "Klaar om een Bengal kat in je gezin te verwelkomen? We horen graag van je en beantwoorden graag al je vragen.",
+    "contactUs": "Neem Contact Op",
+    "viewKittens": "Bekijk Beschikbare Kittens"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Hoe neem je contact op?",
+    "description": "De voorkeursmanier om contact op te nemen, is door een e-mail te sturen. Ik zal zo snel mogelijk reageren op je e-mails, meestal binnen 24 uur. Dank je wel !",
+    "email": "catterybengalivo@gmail.com",
+    "location": "Drunen - NL",
+    "newsletter": {
+      "title": "Nieuwsbrief",
+      "description": "Wil je de laatste updates in je mailbox ontvangen? Abonneer je op onze nieuwsbrief en blijf op de hoogte!",
+      "placeholder": "Laat dit veld leeg als je een mens bent:"
+    }
+  },
+  "footer": {
+    "copyright": "© Copyright BENGALIVO"
+  },
+  "cookies": {
+    "title": "We gebruiken cookies",
+    "description": "We gebruiken cookies om je browse-ervaring te verbeteren, gepersonaliseerde content te leveren en ons verkeer te analyseren. Door op \"Alles Accepteren\" te klikken, stem je in met ons gebruik van cookies.",
+    "settings": "Instellingen",
+    "necessary": "Alleen Noodzakelijk",
+    "acceptAll": "Alles Accepteren",
+    "preferences": "Cookie Voorkeuren",
+    "necessaryTitle": "Noodzakelijke Cookies",
+    "necessaryDesc": "Essentieel voor de goede werking van de website. Kan niet worden uitgeschakeld.",
+    "analyticsTitle": "Analytische Cookies",
+    "analyticsDesc": "Helpen ons begrijpen hoe bezoekers met onze website interacteren.",
+    "marketingTitle": "Marketing Cookies",
+    "marketingDesc": "Gebruikt om bezoekers over websites te volgen voor advertentiedoeleinden.",
+    "cancel": "Annuleren",
+    "save": "Voorkeuren Opslaan"
+  },
+  "newsletter": {
+    "popupTitle": "Blijf Op De Hoogte!",
+    "popupDescription": "Ontvang de laatste updates over onze Bengal katten, nieuwe nesten en speciale aanbiedingen direct in je inbox!",
+    "emailPlaceholder": "Voer je e-mailadres in",
+    "subscribing": "Aanmelden...",
+    "subscribe": "Nu Aanmelden",
+    "benefit1": "Exclusieve foto's van nieuwe nesten",
+    "benefit2": "Speciale aanbiedingen en kortingen",
+    "benefit3": "Geen spam, uitschrijven wanneer je wilt",
+    "successTitle": "Welkom in onze familie!",
+    "successMessage": "Bedankt voor je aanmelding! Je ontvangt binnenkort onze laatste updates."
+  }
+}
