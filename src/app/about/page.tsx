@@ -91,7 +91,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-square relative overflow-hidden rounded-2xl">
                   <Image
-                    src="/images/about-kitten-cage.jpg"
+                    src="/images/breeder1.jpg"
                     alt="Kitten cage in nursing room"
                     fill
                     className="object-cover"
@@ -132,7 +132,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-4">Living Room</h3>
                   <div className="relative h-48 w-full mb-4">
                     <Image
-                      src="/images/about-living-room.jpg"
+                      src="/images/cattery1.jpg"
                       alt="Living room with cats"
                       fill
                       className="object-cover rounded-lg"
@@ -158,7 +158,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-4">Toys & Catwheels</h3>
                   <div className="relative h-48 w-full mb-4">
                     <Image
-                      src="/images/about-toys-catwheels.jpg"
+                      src="/images/cattery2.jpg"
                       alt="Catwheels and toys"
                       fill
                       className="object-cover rounded-lg"
@@ -184,7 +184,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-4">Outdoors</h3>
                   <div className="relative h-48 w-full mb-4">
                     <Image
-                      src="/images/about-outdoors.jpg"
+                      src="/images/featured-cat.jpg"
                       alt="Outdoor enclosure"
                       fill
                       className="object-cover rounded-lg"

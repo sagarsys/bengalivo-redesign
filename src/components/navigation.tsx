@@ -62,11 +62,10 @@ export function Navigation() {
               <Image
                 src="/images/logo-wit.png"
                 alt="Bengalivo"
-                width={120}
-                height={120}
-                className="h-24 w-auto"
+                width={80}
+                height={80}
+                className="h-20 w-auto"
               />
-              <span className="text-sm font-medium text-gradient">Bengalivo</span>
             </motion.div>
           </Link>
 

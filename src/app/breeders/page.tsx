@@ -19,7 +19,7 @@ const breederCats = [
     generation: "9G",
     genetics: "PKdef carrier (N/K), PRA-b N/N by parentage & not tested for colour (could be melanistic carrier)",
     pedigree: "Stamboom van Bengalivo",
-    imageUrl: "/images/breeder-lilo.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const breederCats = [
     generation: "9G",
     genetics: "PKdef N/N by parentage, N/PRA-b, no snow carrier",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-maya.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const breederCats = [
     generation: "9G",
     genetics: "PKdef N/K, N/PRA-b, sepia carrier (C/cb)",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-dust.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const breederCats = [
     generation: "8G",
     genetics: "PKdef N/K, PRA-b N/N by parentage, sepia carrier (C/cb)",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-eos.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ const breederCats = [
     generation: "8G",
     genetics: "PKdef N/N and PRA-b N/N by parentage, sepia (cb/cb)",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-copper.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 6,
@@ -84,7 +84,7 @@ const breederCats = [
     generation: "9G",
     genetics: "PKdef N/N, N/PRA-b, no carrier of snow",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-blue.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 7,
@@ -97,7 +97,7 @@ const breederCats = [
     generation: "9G",
     genetics: "PKdef and PRA-b N/N, melanistic carrier & no snow carrier",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-pink.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 8,
@@ -110,7 +110,7 @@ const breederCats = [
     generation: "6G",
     genetics: "PKdef N/N by parentage & PRA-b (test pending)",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-noblesse.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 9,
@@ -123,7 +123,7 @@ const breederCats = [
     generation: "7G",
     genetics: "PKdef N/N, PRA-b N/N by parentage & seal lynx (C/cs) carrier",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-moana.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 10,
@@ -136,7 +136,7 @@ const breederCats = [
     generation: "7G",
     genetics: "PKdef N/K, PRA-b N/N by parentage & sepia (cb/cb)",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-ivory.jpg"
+    imageUrl: "/images/breeder1.jpg"
   },
   {
     id: 11,
@@ -149,7 +149,7 @@ const breederCats = [
     generation: "9G",
     genetics: "PKdef N/K and PRA-b N/N by parentage & sepia carrier (C/cb)",
     pedigree: "Pedigree",
-    imageUrl: "/images/breeder-zawadi.jpg"
+    imageUrl: "/images/breeder1.jpg"
   }
 ];
 

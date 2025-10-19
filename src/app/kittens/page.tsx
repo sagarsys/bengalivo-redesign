@@ -194,13 +194,13 @@ export default function KittensPage() {
                 <CardContent className="space-y-3">
                   <div className="relative w-full h-48 rounded-lg overflow-hidden">
                     <Image
-                      src={kitten.imageUrl || "/images/kitten-expected.jpg"}
+                      src={kitten.imageUrl || "/images/featured-cat.jpg"}
                       alt={kitten.name}
                       fill
                       className="object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "/images/kitten-expected.jpg";
+                        target.src = "/images/featured-cat.jpg";
                       }}
                     />
                   </div>
@@ -245,13 +245,13 @@ export default function KittensPage() {
                 <CardContent className="space-y-3">
                   <div className="relative w-full h-48 rounded-lg overflow-hidden">
                     <Image
-                      src={cat.imageUrl || "/images/retired-cat-gold.jpg"}
+                      src={cat.imageUrl || "/images/breeder1.jpg"}
                       alt={cat.name}
                       fill
                       className="object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "/images/retired-cat-gold.jpg";
+                        target.src = "/images/breeder1.jpg";
                       }}
                     />
                   </div>
