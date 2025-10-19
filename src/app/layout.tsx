@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://bengalivo.com'),
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.NEXTAUTH_URL || 'https://bengalivo.com'),
   title: "Bengalivo - Bengal Cat Cattery in the Netherlands | Breeding Black Tabby and Snow Bengals",
   description: "Bengalivo cattery in Drunen, Netherlands. Since 2004 breeding healthy, well-socialized Bengal cats with focus on health, character, and wild look. TICA registered cattery with champion bloodlines.",
   keywords: "Bengal cats, Bengal kittens, cat breeder Netherlands, Drunen, TICA registered, black tabby bengals, snow bengals, Bengal cat cattery, Ivonne van Dreumel, champion bengals, healthy bengals",

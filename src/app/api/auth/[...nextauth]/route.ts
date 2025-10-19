@@ -18,6 +18,10 @@ const handler = NextAuth({
     error: '/api/auth/error',
   },
   secret: process.env.NEXTAUTH_SECRET,
+  // Use dynamic URL for NextAuth
+  ...(process.env.VERCEL_URL && {
+    url: `https://${process.env.VERCEL_URL}`,
+  }),
 })
 
 export { handler as GET, handler as POST }
