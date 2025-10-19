@@ -178,8 +178,8 @@ export function Navigation() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-8">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] p-6">
+              <div className="flex flex-col space-y-6 mt-8">
                 {navigationItems.map((item) => (
                   <Link
                     key={item.name}

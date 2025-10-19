@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
+import { SCROLL_ANIMATION } from "@/constants";
 
 type AboutBengalivoSectionProps = {
   title: string;
@@ -11,9 +12,7 @@ type AboutBengalivoSectionProps = {
 export function AboutBengalivoSection({ title, content }: AboutBengalivoSectionProps) {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      {...SCROLL_ANIMATION}
       className="mt-16"
     >
       <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">

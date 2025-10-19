@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { SCROLL_ANIMATION } from "@/constants";
 
 type NewsletterSectionProps = {
   title: string;
@@ -13,9 +14,7 @@ type NewsletterSectionProps = {
 export function NewsletterSection({ title, subtitle, placeholder, buttonText }: NewsletterSectionProps) {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      {...SCROLL_ANIMATION}
       className="mb-16"
     >
       <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">

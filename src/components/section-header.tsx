@@ -1,5 +1,6 @@
 // Reusable section header component
 import { motion } from "framer-motion";
+import { SCROLL_ANIMATION } from "@/constants";
 
 type SectionHeaderProps = {
   title: string;
@@ -10,9 +11,7 @@ type SectionHeaderProps = {
 export function SectionHeader({ title, subtitle, centered = true }: SectionHeaderProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      {...SCROLL_ANIMATION}
       className={`mb-12 ${centered ? 'text-center' : ''}`}
     >
       <h2 className="text-2xl sm:text-3xl font-bold mb-4">
