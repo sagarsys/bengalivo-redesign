@@ -43,6 +43,7 @@ export function ImageGallery({ images, alt, currentIndex = 0 }: Props) {
             alt={`${alt} - Image ${activeIndex + 1}`}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
             <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 px-4 py-2 rounded-full">
@@ -93,6 +94,7 @@ export function ImageGallery({ images, alt, currentIndex = 0 }: Props) {
                   alt={`${alt} thumbnail ${index + 1}`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 640px) 25vw, (max-width: 768px) 16vw, 12vw"
                 />
               </button>
             ))}
@@ -160,6 +162,7 @@ export function ImageGallery({ images, alt, currentIndex = 0 }: Props) {
                   alt={`${alt} - Image ${activeIndex + 1}`}
                   fill
                   className="object-contain"
+                  sizes="100vw"
                 />
               </motion.div>
 

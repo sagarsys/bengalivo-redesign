@@ -132,6 +132,7 @@ export default function AboutPage() {
                 alt={t('about.nursingRoomTitle')}
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -153,6 +154,7 @@ export default function AboutPage() {
                   alt={t('about.livingRoomTitle')}
                   fill
                   className="object-cover rounded-t-lg"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
               <CardContent className="p-6">
@@ -171,6 +173,7 @@ export default function AboutPage() {
                   alt={t('about.toysTitle')}
                   fill
                   className="object-cover rounded-t-lg"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
               <CardContent className="p-6">
@@ -189,6 +192,7 @@ export default function AboutPage() {
                   alt={t('about.outdoorsTitle')}
                   fill
                   className="object-cover rounded-t-lg"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
               <CardContent className="p-6">

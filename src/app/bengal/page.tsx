@@ -51,6 +51,7 @@ export default function BengalPage() {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
           </div>
         </motion.div>
@@ -91,6 +92,7 @@ export default function BengalPage() {
                 alt="Wild Heritage"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -110,6 +112,7 @@ export default function BengalPage() {
                 alt="Bengal Cat Patterns"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div className="space-y-6 order-1 lg:order-2">
@@ -141,6 +144,7 @@ export default function BengalPage() {
                 alt="Bengal Cat History"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -164,6 +168,7 @@ export default function BengalPage() {
                   alt={`Bengal Cat ${carouselIndex + 1}`}
                   fill
                   className="object-cover transition-all duration-500"
+                  sizes="(max-width: 1536px) 100vw, 1536px"
                 />
               </div>
               
@@ -226,8 +231,8 @@ export default function BengalPage() {
                 </h3>
                 <div className="w-24 h-1 bg-primary mx-auto"></div>
               </div>
-            </div>
-            
+          </div>
+
             {/* Features Grid - Modern Design */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Rich Coat */}
@@ -305,13 +310,13 @@ export default function BengalPage() {
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Brain className="h-10 w-10 text-primary" />
-                    </div>
+                </div>
                     <h4 className="text-2xl font-bold mb-4 text-center">{t('bengal.instantHit.smart.title')}</h4>
                     <p className="text-muted-foreground leading-relaxed text-center">
                       {t('bengal.instantHit.smart.content')}
-                    </p>
-                  </CardContent>
-                </Card>
+                </p>
+              </CardContent>
+            </Card>
               </motion.div>
 
               {/* Focused on You */}
@@ -326,13 +331,13 @@ export default function BengalPage() {
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Users className="h-10 w-10 text-primary" />
-                    </div>
+                </div>
                     <h4 className="text-2xl font-bold mb-4 text-center">{t('bengal.instantHit.focused.title')}</h4>
                     <p className="text-muted-foreground leading-relaxed text-center">
                       {t('bengal.instantHit.focused.content')}
-                    </p>
-                  </CardContent>
-                </Card>
+                </p>
+              </CardContent>
+            </Card>
               </motion.div>
 
               {/* Water Loving */}
@@ -347,13 +352,13 @@ export default function BengalPage() {
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Droplets className="h-10 w-10 text-primary" />
-                    </div>
+                </div>
                     <h4 className="text-2xl font-bold mb-4 text-center">{t('bengal.instantHit.waterLoving.title')}</h4>
                     <p className="text-muted-foreground leading-relaxed text-center">
                       {t('bengal.instantHit.waterLoving.content')}
-                    </p>
-                  </CardContent>
-                </Card>
+                </p>
+              </CardContent>
+            </Card>
               </motion.div>
             </div>
           </div>
@@ -417,6 +422,7 @@ export default function BengalPage() {
                     alt={`Bengal Cat ${index + 1}`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.div>
@@ -435,12 +441,12 @@ export default function BengalPage() {
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-center">{t('bengal.aboutBengalivo.title')}</h3>
             <Card className="hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-8">
+            <CardContent className="p-8">
                 <p className="text-muted-foreground text-center text-lg leading-relaxed">
                   {t('bengal.aboutBengalivo.content')}
-                </p>
-              </CardContent>
-            </Card>
+              </p>
+            </CardContent>
+          </Card>
           </div>
         </motion.section>
 
@@ -454,7 +460,7 @@ export default function BengalPage() {
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-center">{t('bengal.contact.title')}</h3>
             <Card className="hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-8">
+            <CardContent className="p-8">
                 <h4 className="text-2xl font-bold mb-6 text-center">{t('bengal.contact.subtitle')}</h4>
                 <div className="space-y-6 text-muted-foreground text-lg">
                   <p className="text-center">
@@ -471,7 +477,7 @@ export default function BengalPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
+              </div>
         </motion.section>
 
         {/* Newsletter Section */}
@@ -496,10 +502,10 @@ export default function BengalPage() {
                       className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground"
                     />
                     <Button className="px-6">{t('bengal.newsletter.subscribe')}</Button>
-                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </CardContent>
+          </Card>
           </div>
         </motion.section>
       </div>

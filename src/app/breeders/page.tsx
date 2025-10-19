@@ -88,6 +88,7 @@ export default function BreedersPage() {
                                   alt={cat.father}
                                   fill
                                   className="object-cover"
+                                  sizes="64px"
                                 />
                               </div>
                               <div className="flex-1 min-w-0">
@@ -106,6 +107,7 @@ export default function BreedersPage() {
                                   alt={cat.mother}
                                   fill
                                   className="object-cover"
+                                  sizes="64px"
                                 />
                               </div>
                               <div className="flex-1 min-w-0">
