@@ -26,77 +26,71 @@ export default function AboutPage() {
   }, [introSlides.length]);
 
   return (
-    <div className="min-h-screen py-12">
+    <div className="min-h-screen py-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-8">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
             {t('about.title')}
           </h1>
         </motion.div>
 
-        {/* Quote Section - Moved Above Slideshow */}
+        {/* Quote Section with Slideshow */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 bg-gradient-to-b from-primary/5 to-transparent py-20"
+          className="mb-16 bg-gradient-to-b from-primary/5 to-transparent py-8"
         >
           <div className="max-w-5xl mx-auto text-center">
-            <div className="relative">
-              <svg className="w-16 h-16 text-primary/20 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+            <div className="relative mb-6">
+              <svg className="w-10 h-10 text-primary/20 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
               </svg>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 leading-tight">
                 {t('about.quoteTitle')}
               </h2>
-              <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                {t('about.quoteSubtitle')}
-              </p>
+              <div className="w-20 h-0.5 bg-primary mx-auto"></div>
             </div>
-          </div>
-        </motion.section>
-
-        {/* Intro Slideshow */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <div className="relative w-full max-w-4xl mx-auto h-[400px] rounded-2xl overflow-hidden">
-            {introSlides.map((slide, index) => (
-              <Image
-                key={slide}
-                src={slide}
-                alt={`About Bengalivo ${index + 1}`}
-                fill
-                className={`object-cover transition-opacity duration-1000 ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
-                }`}
-                priority={index === 0}
-              />
-            ))}
             
-            {/* Slide Indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {introSlides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+            {/* Intro Slideshow - Moved Inside Quote Section */}
+            <div className="relative w-full max-w-4xl mx-auto h-[300px] sm:h-[350px] rounded-2xl overflow-hidden mb-5">
+              {introSlides.map((slide, index) => (
+                <Image
+                  key={slide}
+                  src={slide}
+                  alt={`About Bengalivo ${index + 1}`}
+                  fill
+                  className={`object-cover transition-opacity duration-1000 ${
+                    index === currentSlide ? 'opacity-100' : 'opacity-0'
                   }`}
+                  priority={index === 0}
                 />
               ))}
+              
+              {/* Slide Indicators */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                {introSlides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
+            
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+              {t('about.quoteSubtitle')}
+            </p>
           </div>
-        </motion.div>
+        </motion.section>
 
         {/* Main Content */}
         <motion.section
