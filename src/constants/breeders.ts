@@ -72,7 +72,7 @@ export const BREEDER_CATS_DATA = [
     color: "seal sepia spotted tabby",
     sex: "boy (proven)",
     dob: "2 october 2023",
-    father: "Hypnotic'bengal Raoni",
+    father: "Hypnoticbengal Raoni",
     mother: "Wild Paradise Tigrinha",
     coi: "",
     generation: "8G",
