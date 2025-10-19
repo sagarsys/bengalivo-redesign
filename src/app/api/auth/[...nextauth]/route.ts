@@ -17,6 +17,7 @@ const handler = NextAuth({
     signIn: '/api/auth/signin',
     error: '/api/auth/error',
   },
+  secret: process.env.NEXTAUTH_SECRET,
 })
 
 export { handler as GET, handler as POST }
