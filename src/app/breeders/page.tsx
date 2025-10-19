@@ -6,12 +6,24 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import { ImageGallery } from "@/components/image-gallery";
-import { BREEDER_CATS_DATA } from "@/constants/breeders";
 import { FALLBACK_IMAGE } from "@/utils/image-utils";
 import { useTranslation } from 'react-i18next';
+import { useBreedersData } from "@/hooks/use-breeders-data";
+import { LoadingPage } from "@/components/loading-page";
+import { ErrorDisplay } from "@/components/error-display";
+import { BreedersPageSkeleton } from "@/components/skeletons/breeders-page-skeleton";
 
 export default function BreedersPage() {
   const { t } = useTranslation();
+  const { breeders, loading, error } = useBreedersData();
+
+  if (loading) {
+    return <LoadingPage skeleton={<BreedersPageSkeleton />} />;
+  }
+  
+  if (error) {
+    return <ErrorDisplay message={error} onRetry={() => window.location.reload()} />;
+  }
   
   return (
     <div className="min-h-screen py-12">
@@ -32,7 +44,7 @@ export default function BreedersPage() {
 
         {/* Breeder Cats Grid */}
         <div className="space-y-16">
-          {BREEDER_CATS_DATA.map((cat, index) => (
+          {breeders.map((cat, index) => (
             <motion.div
               key={cat.id}
               initial={{ opacity: 0, y: 30 }}
@@ -46,7 +58,7 @@ export default function BreedersPage() {
                     {/* Image Gallery */}
                     <div>
                       <ImageGallery 
-                        images={cat.images || [FALLBACK_IMAGE]} 
+                        images={cat.images && cat.images.length > 0 ? cat.images : [cat.imageUrl || FALLBACK_IMAGE]} 
                         alt={cat.name}
                       />
                     </div>
@@ -57,7 +69,7 @@ export default function BreedersPage() {
                         <h3 className="text-2xl sm:text-3xl font-bold mb-2">{cat.name}</h3>
                         <div className="flex flex-wrap gap-2 mb-4">
                           <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
-                            {cat.sex}
+                            {cat.gender}
                           </span>
                           <span className="text-sm bg-muted px-3 py-1 rounded-full">
                             {cat.color}

@@ -38,12 +38,20 @@ model Cat {
   gender        String   // "male", "female"
   color         String?
   age           String?
+  dob           String?  // Date of birth
   price         String?
   description   String?
   achievements  String?  // "21th Best Allbreed Cat of TICA 2021-2022"
   father        String?
   mother        String?
   imageUrl      String?
+  images        String?  // JSON array of image URLs
+  fatherImageUrl String?
+  motherImageUrl String?
+  coi           String?  // Coefficient of Inbreeding
+  generation    String?  // "9G", "8G", etc.
+  genetics      String?  // Genetics information
+  pedigree      String?  // Pedigree name/link
   isAvailable   Boolean  @default(true)
   isFeatured    Boolean  @default(false)
   createdAt     DateTime @default(now())

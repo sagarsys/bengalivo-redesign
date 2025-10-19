@@ -1,6 +1,7 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
+import { BREEDER_CATS_DATA } from '../src/constants/breeders';
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 async function main() {
   console.log('🌱 Seeding database with original Bengalivo content...')
@@ -34,19 +35,30 @@ async function main() {
     ]
   })
 
-  // Featured cat
-  await prisma.cat.create({
-    data: {
-      name: 'IW SGC Bengalivo Million Reasons',
-      fullName: 'IW SGC Bengalivo Million Reasons',
-      nickname: 'Eos',
-      type: 'breeder',
-      gender: 'female',
-      achievements: '21th Best Allbreed Cat of TICA 2021-2022',
-      isFeatured: true,
-      isAvailable: false
-    }
-  })
+  // Breeder cats from constants
+  for (const breederCat of BREEDER_CATS_DATA) {
+    await prisma.cat.create({
+      data: {
+        name: breederCat.name,
+        type: 'breeder',
+        gender: breederCat.sex.includes('girl') ? 'female' : 'male',
+        color: breederCat.color,
+        dob: breederCat.dob,
+        father: breederCat.father,
+        mother: breederCat.mother,
+        images: JSON.stringify(breederCat.images),
+        fatherImageUrl: breederCat.fatherImageUrl,
+        motherImageUrl: breederCat.motherImageUrl,
+        coi: breederCat.coi,
+        generation: breederCat.generation,
+        genetics: breederCat.genetics,
+        pedigree: breederCat.pedigree,
+        imageUrl: breederCat.images?.[0] || '/images/breeder1.jpg',
+        isAvailable: false,
+        isFeatured: breederCat.name.includes('Million Reasons')
+      }
+    });
+  }
 
   // Kittens
   await prisma.cat.createMany({
