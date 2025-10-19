@@ -236,7 +236,7 @@ export default function BreedersPage() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+          <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
                 <Heart className="h-6 w-6 text-primary" />

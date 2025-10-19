@@ -44,11 +44,11 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 bg-gradient-to-b from-primary/5 to-transparent py-8"
+          className="mb-16 bg-gradient-to-b from-primary/8 to-transparent py-8"
         >
           <div className="max-w-5xl mx-auto text-center">
             <div className="relative mb-6">
-              <svg className="w-10 h-10 text-primary/20 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-10 h-10 text-primary/40 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
               </svg>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 leading-tight">
@@ -208,7 +208,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+          <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold mb-4">{t('about.newsletterTitle')}</h2>
               <p className="text-muted-foreground mb-6">{t('about.newsletterSubtitle')}</p>
@@ -233,7 +233,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+          <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-4">{t('about.aboutBengalivoTitle')}</h2>
               <p className="text-muted-foreground leading-relaxed">

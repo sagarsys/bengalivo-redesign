@@ -212,13 +212,13 @@ export default function BengalPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24 bg-gradient-to-b from-primary/5 to-transparent py-20"
+          className="mb-24 bg-gradient-to-b from-primary/8 to-transparent py-20"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {/* Quote Section */}
             <div className="max-w-5xl mx-auto mb-16 text-center">
               <div className="relative">
-                <svg className="w-16 h-16 text-primary/20 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-16 h-16 text-primary/40 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                 </svg>
                 <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
@@ -238,7 +238,7 @@ export default function BengalPage() {
                 transition={{ delay: 0.1 }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/8">
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Sparkles className="h-10 w-10 text-primary" />
@@ -259,7 +259,7 @@ export default function BengalPage() {
                 transition={{ delay: 0.2 }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/8">
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Star className="h-10 w-10 text-primary" />
@@ -280,7 +280,7 @@ export default function BengalPage() {
                 transition={{ delay: 0.3 }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/8">
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Heart className="h-10 w-10 text-primary" />
@@ -301,7 +301,7 @@ export default function BengalPage() {
                 transition={{ delay: 0.4 }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/8">
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Brain className="h-10 w-10 text-primary" />
@@ -322,7 +322,7 @@ export default function BengalPage() {
                 transition={{ delay: 0.5 }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/8">
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Users className="h-10 w-10 text-primary" />
@@ -343,7 +343,7 @@ export default function BengalPage() {
                 transition={{ delay: 0.6 }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/8">
                   <CardContent className="p-8">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <Droplets className="h-10 w-10 text-primary" />
@@ -482,7 +482,7 @@ export default function BengalPage() {
           className="mb-16"
         >
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+            <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">
               <CardContent className="p-8 text-center">
                 <h3 className="text-3xl font-bold mb-4">{t('bengal.newsletter.title')}</h3>
                 <p className="text-muted-foreground mb-8 text-lg">

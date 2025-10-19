@@ -122,7 +122,7 @@ export default function ContactPage() {
             </Card>
 
             {/* About Bengalivo */}
-            <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+            <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <Heart className="h-5 w-5 text-primary" />
@@ -213,7 +213,7 @@ export default function ContactPage() {
               transition={{ delay: 0.6 }}
               className="mt-8"
             >
-              <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+              <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-4">
                     {t('contact.newsletter.title')}
