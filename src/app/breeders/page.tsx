@@ -18,7 +18,8 @@ const breederCats = [
     coi: "24.186",
     generation: "9G",
     genetics: "PKdef carrier (N/K), PRA-b N/N by parentage & not tested for colour (could be melanistic carrier)",
-    pedigree: "Stamboom van Bengalivo"
+    pedigree: "Stamboom van Bengalivo",
+    imageUrl: "/images/breeder-lilo.jpg"
   },
   {
     id: 2,
@@ -30,7 +31,8 @@ const breederCats = [
     coi: "24.995",
     generation: "9G",
     genetics: "PKdef N/N by parentage, N/PRA-b, no snow carrier",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-maya.jpg"
   },
   {
     id: 3,
@@ -42,7 +44,8 @@ const breederCats = [
     coi: "24.481",
     generation: "9G",
     genetics: "PKdef N/K, N/PRA-b, sepia carrier (C/cb)",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-dust.jpg"
   },
   {
     id: 4,
@@ -54,7 +57,8 @@ const breederCats = [
     coi: "27.676",
     generation: "8G",
     genetics: "PKdef N/K, PRA-b N/N by parentage, sepia carrier (C/cb)",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-eos.jpg"
   },
   {
     id: 5,
@@ -66,7 +70,8 @@ const breederCats = [
     coi: "",
     generation: "8G",
     genetics: "PKdef N/N and PRA-b N/N by parentage, sepia (cb/cb)",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-copper.jpg"
   },
   {
     id: 6,
@@ -78,7 +83,8 @@ const breederCats = [
     coi: "24.481",
     generation: "9G",
     genetics: "PKdef N/N, N/PRA-b, no carrier of snow",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-blue.jpg"
   },
   {
     id: 7,
@@ -90,7 +96,8 @@ const breederCats = [
     coi: "24.186",
     generation: "9G",
     genetics: "PKdef and PRA-b N/N, melanistic carrier & no snow carrier",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-pink.jpg"
   },
   {
     id: 8,
@@ -102,7 +109,8 @@ const breederCats = [
     coi: "25.005",
     generation: "6G",
     genetics: "PKdef N/N by parentage & PRA-b (test pending)",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-noblesse.jpg"
   },
   {
     id: 9,
@@ -114,7 +122,8 @@ const breederCats = [
     coi: "",
     generation: "7G",
     genetics: "PKdef N/N, PRA-b N/N by parentage & seal lynx (C/cs) carrier",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-moana.jpg"
   },
   {
     id: 10,
@@ -126,7 +135,8 @@ const breederCats = [
     coi: "",
     generation: "7G",
     genetics: "PKdef N/K, PRA-b N/N by parentage & sepia (cb/cb)",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-ivory.jpg"
   },
   {
     id: 11,
@@ -138,7 +148,8 @@ const breederCats = [
     coi: "29.064",
     generation: "9G",
     genetics: "PKdef N/K and PRA-b N/N by parentage & sepia carrier (C/cb)",
-    pedigree: "Pedigree"
+    pedigree: "Pedigree",
+    imageUrl: "/images/breeder-zawadi.jpg"
   }
 ];
 
@@ -169,7 +180,7 @@ export default function BreedersPage() {
               <Card className="overflow-hidden hover:shadow-elegant transition-all duration-300">
                 <div className="aspect-video relative overflow-hidden">
                   <Image
-                    src={`/images/breeder-${cat.name.toLowerCase().split(' ')[1] || 'default'}.jpg`}
+                    src={cat.imageUrl || "/images/breeder1.jpg"}
                     alt={cat.name}
                     fill
                     className="object-cover"

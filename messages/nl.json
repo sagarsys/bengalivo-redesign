@@ -88,5 +88,81 @@
     "benefit3": "Geen spam, uitschrijven wanneer je wilt",
     "successTitle": "Welkom in onze familie!",
     "successMessage": "Bedankt voor je aanmelding! Je ontvangt binnenkort onze laatste updates."
+  },
+  "bengal": {
+    "title": "De Bengal",
+    "subtitle": "Een Betoverende Schoonheid",
+    "introduction": "Vrij veel kattenrassen hebben een wilde katachtige uitstraling: Noorse Boskatten lijken op grote arctische katachtige roofdieren; Pixie Bob katten lijken veel op Amerikaanse Bobcats; Abessijnse katten dragen het wilde agouti vachtpatroon met trots. In feite is een van de redenen waarom we zo veel van katten houden de duidelijke ongetemde touch in hun uiterlijk en karakter.",
+    "wildHeritage": {
+      "title": "Wilde Erfenis",
+      "content": "Echter, niet veel rassen bezitten een gedocumenteerde wilde erfenis zoals de Bengal. De Bengal kat is een mooie kat die een kruising is tussen een huiskat en de Aziatische luipaardkat. Het heeft mooie markeringen die vergelijkbaar zijn met die van de wilde Aziatische luipaard, met strepen en andere markeringen die hun uiterlijk versterken. Qua grootte is de Bengal kat vergelijkbaar in grootte met een huiskat en ze variëren van 7 tot 10 pond voor vrouwtjes en 9 en 12 pond voor mannetjes. Mannetjes kunnen groeien tot bijna 20 pond."
+    },
+    "patterns": {
+      "title": "Patronen",
+      "content": "De markeringen op de Bengal kat variëren afhankelijk van lichaamsdeel. Het gezicht heeft horizontale strepen die het bijna laten lijken alsof de kat mascara draagt. De zijkanten van het lichaam hebben vlekken vergelijkbaar met die van een luipaard of jaguar. De achterkant van het lichaam heeft symmetrische strepen. Ze hebben twee verschillende vachtpatronen, ofwel marmer of gevlekt. In tegenstelling tot elk ander ras, lijken sommige Bengals alsof ze gedoopt zijn in goud of zilver glitters. Hun onderscheidende luipaard gevlekte of gemarmerde vacht versterkt hun wilde uiterlijk terwijl ze door het huis zwerven."
+    },
+    "history": {
+      "title": "Geschiedenis",
+      "content": "Korte Geschiedenis – Zoals het verhaal gaat, fokte Jean Sugden Mills rond 1982 een huiskat met een wilde Indiase Mau. Rond dezelfde tijd begonnen Greg en Elizabeth Kent hun eigen ras van Bengal Katten met behulp van een Egyptische Mau. Zowel Jean Mills als de Kents werkten hard om het ras populair te maken, en in 1986 nam The International Cat Association de eerste geschreven rasstandaard aan. Tegenwoordig zijn Bengal Katten het meest populaire geregistreerde kattenras. Bengal fokkers en fokprogramma's overtreffen nu de meeste andere rassen."
+    },
+    "notForEveryone": {
+      "title": "Niet voor iedereen..",
+      "content": "Bengal katten zijn slimme en sluwe dieren die aandacht verlangen en altijd aan het verkennen zijn. Deze katten worden niet aanbevolen voor casual huisdier eigenaren, omdat ze een handvol kunnen zijn, maar je kunt er zeker van zijn dat het leven met een er nooit saai zal zijn."
+    },
+    "instantHit": {
+      "title": "Dus wat maakte de Bengal zo'n instant hit in de kattenliefhebbers wereld?",
+      "richCoat": {
+        "title": "1. Rijke Vacht – Weinig Verzorging",
+        "content": "De Bengal heeft een gladde rijke vacht die geen buitengewone verzorgingsrituelen vereist. Enige borstelen wordt altijd aanbevolen, voor bindingsdoeleinden als niets anders, maar de vacht blijft helder en mooi zelfs zonder die extra zorg. De vacht heeft een onderscheidend \"ongetemd\" uiterlijk, dankzij de wilde erfenis van de Bengal, en sommige katten zouden een werkelijke gouden glitter over hun vacht hebben."
+      },
+      "variety": {
+        "title": "2. Variëteit van Vachtpatronen en Kleuren",
+        "content": "Bengals vertonen altijd het tabby markeringen patroon, maar dat betekent geen uniforme look. Bengal katten komen in verschillende tinten bruin, met verschillende gelige en roodachtige tinten. Er zijn zelfs witte \"sneeuw\" Bengals die een licht zilveren tabby patroon ondersteunen (sommigen hebben zelfs blauwe ogen)."
+      },
+      "personality": {
+        "title": "3. Bengal Purrrsonality",
+        "content": "De persoonlijkheid van de Bengal kat is wat het zo'n geweldig huisdier maakt voor dierenliefhebbers. Ze zijn lief en aanhankelijk, maar ongelooflijk behendig, intelligent en actief. Deze nieuwsgierige katachtigen hebben de neiging om hun omgeving te verkennen en voortdurend menselijke interactie te zoeken."
+      },
+      "smart": {
+        "title": "4. Zeer Slim",
+        "content": "Een deel van de Bengal persoonlijkheid is zijn buitengewone vermogen om kritisch te denken. De Bengal kan dingen uitzoeken en het eigenlijk proberen te doen op zijn eigen. Dit aspect van de Bengal kat persoonlijkheid heeft het ras onderscheidende labels opgeleverd zoals \"hond-achtige kat\" of \"hond-kat\"."
+      },
+      "focused": {
+        "title": "5. Gefocust op Jou",
+        "content": "Als de directe bron van zorg en veiligheid, ben jij de ouder van de kat. Deze kat is zo gehecht aan je dat een groot deel van zijn persoonlijkheid is om altijd bij je te zijn. \"Praten\" is inherent aan de Bengal kat persoonlijkheid."
+      },
+      "waterLoving": {
+        "title": "Water Liefhebbend",
+        "content": "Bengals zijn een van de weinige rassen die dol zijn op water! Sommigen spelen behoorlijk tevreden in diep water en sommigen houden zelfs van zwemmen! Ze houden ook van baden! Vergeet het gezegde dat kittens niet graag nat worden."
+      }
+    },
+    "summary": {
+      "title": "Samenvatting",
+      "subtitle": "Tot slot zijn er veel misvattingen over Bengal katten, variërend van hun persoonlijkheden tot hun gedragingen. Hier zijn de top vijf mythen over Bengal katten die gewoon niet waar zijn:",
+      "myths": {
+        "1": "Bengal katten zijn gerelateerd aan de Bengal Tijger. De naam van de Bengal kat is eigenlijk Prionailurus Bengalensis, wat eigenlijk de Latijnse naam is voor Aziatische Luipaardkat.",
+        "2": "Bengal katten zijn wild en destructief, en ze zullen je huis vernietigen. Net als elke andere kat zijn ze bekend om af en toe ondeugend te zijn. Velen denken dat Bengals meer kans hebben om primitief gedrag te vertonen. Nee, sorry. Bengal katten zijn goed opgevoed, vooral met de juiste training.",
+        "3": "Bengals zijn agressiever dan andere soorten katten. Ze zijn niet agressiever dan je gedomesticeerde kitten. Alle rassen van katten moeten goed gesocialiseerd worden vanaf de tijd dat ze jong zijn, en als je dat doet, zal je kat ongeacht het ras goed spelen met anderen.",
+        "4": "Bengal katten zijn niet knuffelig of schootkatten. Dit is niet waar. Sommige katten zitten graag de hele tijd op schoot, maar Bengals gaan zijn waar de actie is. Bengal katten zijn bekend om mensen bij de deur te begroeten, en zullen zelfs mensen volgen terwijl ze gaan. Bengals hebben op veel gelegenheden de neiging om knuffeliger te zijn dan andere rassen van katten.",
+        "5": "Bengal katten kunnen allergische reacties veroorzaken. In werkelijkheid zijn er mensen die hebben gemeld geen reacties te hebben op Bengals, wanneer ze reacties hadden op andere katten. Hoewel het moeilijk zou zijn om te zeggen dat elk dier volledig hypoallergeen is, hebben mensen met kattenallergieën meer geluk gehad met Bengal katten dan andere rassen van katten."
+      }
+    },
+    "aboutBengalivo": {
+      "title": "Over Bengalivo",
+      "content": "Mijn naam is Ivonne van Dreumel en sinds 2004 eigenaar van Bengal katten. Ik woon in Drunen wat in het zuidelijke deel van Nederland is. Sinds 2004 begon mijn verslaving voor Bengals en in 2006 begon ik met fokken van de bengals."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Hoe neem je contact op?",
+      "content": "De voorkeursmanier om contact op te nemen is door een e-mail te sturen. Ik zal reageren op je e-mails zo snel mogelijk, meestal binnen 24 uur. Dank je wel!",
+      "email": "catterybengalivo@gmail.com",
+      "location": "Drunen - NL"
+    },
+    "newsletter": {
+      "title": "Nieuwsbrief",
+      "content": "Wil je de laatste updates in je mailbox ontvangen? Abonneer je op onze nieuwsbrief en blijf in contact!",
+      "placeholder": "Je e-mailadres",
+      "subscribe": "Abonneren"
+    }
   }
 }
