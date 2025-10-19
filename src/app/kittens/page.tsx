@@ -8,114 +8,26 @@ import { Heart, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import type { Kitten, RetiredCat, PlannedLitter } from "@/types";
+import { useKittensData } from "@/hooks/use-kittens-data";
+import { getKittensStructuredData, kittensPageMeta } from "@/seo/kittens";
+import { CONTACT_EMAIL, CONTACT_LOCATION, KITTEN_UPDATE_DATE, KITTEN_BIRTH_DATE, RETIRED_UPDATE_DATE } from "@/constants";
+import { LoadingSpinner } from "@/components/loading-spinner";
+import { ErrorDisplay } from "@/components/error-display";
 
 export default function KittensPage() {
-  const [kittens, setKittens] = useState<Kitten[]>([]);
-  const [retiredCats, setRetiredCats] = useState<RetiredCat[]>([]);
-  const [plannedLitters, setPlannedLitters] = useState<PlannedLitter[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { kittens, retiredCats, plannedLitters, loading, error } = useKittensData();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        
-        // Fetch kittens
-        const kittensResponse = await fetch('/api/cats?type=kitten');
-        const kittensData = await kittensResponse.json();
-        setKittens(kittensData || []);
+  const structuredData = getKittensStructuredData(kittens);
 
-        // Fetch retired cats
-        const retiredResponse = await fetch('/api/cats?type=retired');
-        const retiredData = await retiredResponse.json();
-        setRetiredCats(retiredData || []);
-
-        // Fetch planned litters from content API
-        const littersResponse = await fetch('/api/content?page=kittens&section=planned-litters');
-        const littersData = await littersResponse.json();
-        if (littersData && littersData.length > 0 && littersData[0].content) {
-          const litters = JSON.parse(littersData[0].content);
-          // Sort by date, most recent first
-          litters.sort((a: PlannedLitter, b: PlannedLitter) => 
-            new Date(b.date).getTime() - new Date(a.date).getTime()
-          );
-          setPlannedLitters(litters);
-        } else {
-          setPlannedLitters([]);
-        }
-
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to fetch data');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  // Structured data for SEO
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Available Bengal Kittens",
-    "description": "Beautiful Bengal kittens available for adoption from Bengalivo cattery",
-    "url": "https://bengalivo.com/kittens",
-    "numberOfItems": kittens.length,
-    "itemListElement": kittens.map((kitten, index) => ({
-      "@type": "Product",
-      "position": index + 1,
-      "name": kitten.name,
-      "description": kitten.description,
-      "category": "Bengal Kitten",
-      "brand": {
-        "@type": "Brand",
-        "name": "Bengalivo"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": kitten.price || "Contact for price",
-        "priceCurrency": "EUR",
-        "availability": kitten.isAvailable ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
-      }
-    }))
-  };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading kittens...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-red-500 mb-4">Error: {error}</p>
-            <Button onClick={() => window.location.reload()}>Try Again</Button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  if (loading) return <LoadingSpinner message="Loading kittens..." />;
+  if (error) return <ErrorDisplay message={error} onRetry={() => window.location.reload()} />;
 
   return (
     <div className="min-h-screen py-12">
       <Head>
-        <title>Bengal Kittens for Sale | Bengalivo Cattery Netherlands</title>
-        <meta name="description" content="Beautiful Bengal kittens available for adoption. Healthy, well-socialized kittens from our TICA registered cattery in Drunen, Netherlands." />
-        <meta name="keywords" content="Bengal kittens for sale, Bengal kittens Netherlands, Bengal kittens Drunen, TICA registered kittens, healthy Bengal kittens" />
+        <title>{kittensPageMeta.title}</title>
+        <meta name="description" content={kittensPageMeta.description} />
+        <meta name="keywords" content={kittensPageMeta.keywords} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -147,10 +59,10 @@ export default function KittensPage() {
               <em>Follow our Group on Facebook to see the latest photo&apos;s and video&apos;s</em>
             </p>
             <p className="text-muted-foreground">
-              <strong>– Update 01 october 2025 –</strong>
+              <strong>– Update {KITTEN_UPDATE_DATE} –</strong>
             </p>
             <p className="text-muted-foreground">
-              <strong>Born 12 april 2025</strong>
+              <strong>{KITTEN_BIRTH_DATE}</strong>
             </p>
           </div>
 
@@ -201,7 +113,7 @@ export default function KittensPage() {
           
           <div className="mb-6">
             <p className="text-muted-foreground text-center">
-              <strong>Update 21 september 2025</strong> – at this moment some retired cats are available.
+              <strong>Update {RETIRED_UPDATE_DATE}</strong> – at this moment some retired cats are available.
             </p>
           </div>
 
@@ -234,7 +146,7 @@ export default function KittensPage() {
                   <p className="text-sm text-muted-foreground">Color: {cat.color}</p>
                   <p className="text-sm leading-relaxed">{cat.description}</p>
                   <p className="text-xs text-muted-foreground">
-                    In case you are interested, please send a message to: catterybengalivo@gmail.com
+                    In case you are interested, please send a message to: {CONTACT_EMAIL}
                   </p>
                 </CardContent>
               </Card>
@@ -382,11 +294,11 @@ export default function KittensPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary" />
-                    <span className="text-muted-foreground">catterybengalivo@gmail.com</span>
+                    <span className="text-muted-foreground">{CONTACT_EMAIL}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-primary" />
-                    <span className="text-muted-foreground">Drunen - NL</span>
+                    <span className="text-muted-foreground">{CONTACT_LOCATION}</span>
                   </div>
                 </div>
               </div>

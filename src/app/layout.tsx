@@ -7,6 +7,7 @@ import { UserProvider } from "@/components/user-provider";
 import { I18nProvider } from "@/components/i18n-provider";
 import { CookieBanner } from "@/components/cookie-banner";
 import { NewsletterPopup } from "@/components/newsletter-popup";
+import { ErrorBoundary } from "@/components/error-boundary";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -92,19 +93,21 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${oswald.variable} antialiased`}
       >
-        <I18nProvider>
-          <UserProvider>
-            <div className="min-h-screen flex flex-col">
-              <Navigation />
-              <main className="flex-1">
-                {children}
-              </main>
-              <Footer />
-              <CookieBanner />
-              <NewsletterPopup />
-            </div>
-          </UserProvider>
-        </I18nProvider>
+        <ErrorBoundary>
+          <I18nProvider>
+            <UserProvider>
+              <div className="min-h-screen flex flex-col">
+                <Navigation />
+                <main className="flex-1">
+                  {children}
+                </main>
+                <Footer />
+                <CookieBanner />
+                <NewsletterPopup />
+              </div>
+            </UserProvider>
+          </I18nProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );
