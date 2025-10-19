@@ -21,7 +21,7 @@ export function useBreedersData(): BreedersData {
         
         const response = await fetch(API_ROUTES.BREEDERS);
         const data = await response.json();
-        setBreeders(data || []);
+        setBreeders(Array.isArray(data) ? data : []);
 
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch breeder cats');

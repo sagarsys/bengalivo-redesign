@@ -26,23 +26,27 @@ export function useKittensData(): KittensData {
         // Fetch kittens
         const kittensResponse = await fetch(getCatsByType('kitten'));
         const kittensData = await kittensResponse.json();
-        setKittens(kittensData || []);
+        setKittens(Array.isArray(kittensData) ? kittensData : []);
 
         // Fetch retired cats
         const retiredResponse = await fetch(getCatsByType('retired'));
         const retiredData = await retiredResponse.json();
-        setRetiredCats(retiredData || []);
+        setRetiredCats(Array.isArray(retiredData) ? retiredData : []);
 
         // Fetch planned litters
         const littersResponse = await fetch(getContentUrl('kittens', 'planned-litters'));
         const littersData = await littersResponse.json();
-        if (littersData && littersData.length > 0 && littersData[0].content) {
+        if (Array.isArray(littersData) && littersData.length > 0 && littersData[0].content) {
           const litters = JSON.parse(littersData[0].content);
-          // Sort by date, most recent first
-          litters.sort((a: PlannedLitter, b: PlannedLitter) => 
-            new Date(b.date).getTime() - new Date(a.date).getTime()
-          );
-          setPlannedLitters(litters);
+          if (Array.isArray(litters)) {
+            // Sort by date, most recent first
+            litters.sort((a: PlannedLitter, b: PlannedLitter) => 
+              new Date(b.date).getTime() - new Date(a.date).getTime()
+            );
+            setPlannedLitters(litters);
+          } else {
+            setPlannedLitters([]);
+          }
         } else {
           setPlannedLitters([]);
         }

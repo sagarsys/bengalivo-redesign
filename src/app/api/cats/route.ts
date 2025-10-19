@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 
+const FALLBACK_IMAGE = '/images/breeder-cats/fallback.jpeg';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)
@@ -27,7 +29,16 @@ export async function GET(request: NextRequest) {
       orderBy: { createdAt: 'desc' }
     })
 
-    return NextResponse.json(cats)
+    // Add fallback images for missing data
+    const catsWithFallbacks = cats.map(cat => ({
+      ...cat,
+      imageUrl: cat.imageUrl || FALLBACK_IMAGE,
+      fatherImageUrl: cat.fatherImageUrl || FALLBACK_IMAGE,
+      motherImageUrl: cat.motherImageUrl || FALLBACK_IMAGE,
+      images: cat.images ? JSON.parse(cat.images) : [cat.imageUrl || FALLBACK_IMAGE]
+    }));
+
+    return NextResponse.json(catsWithFallbacks)
   } catch (error) {
     console.error('Error fetching cats:', error)
     return NextResponse.json(

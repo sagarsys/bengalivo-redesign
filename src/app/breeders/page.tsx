@@ -80,40 +80,36 @@ export default function BreedersPage() {
                         <h4 className="font-semibold mb-3">{t('breeders.parents')}</h4>
                         <div className="grid grid-cols-2 gap-4">
                           {/* Father */}
-                          <div className="space-y-2">
-                            <p className="text-xs text-muted-foreground uppercase">{t('breeders.father')}</p>
-                            <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
-                              <Image
-                                src={cat.fatherImageUrl || FALLBACK_IMAGE}
-                                alt={cat.father || "Father"}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                onError={(e) => {
-                                  const target = e.target as HTMLImageElement;
-                                  target.src = FALLBACK_IMAGE;
-                                }}
-                              />
+                          {cat.father && (
+                            <div className="space-y-2">
+                              <p className="text-xs text-muted-foreground uppercase">{t('breeders.father')}</p>
+                              <div className="relative aspect-square rounded-lg overflow-hidden">
+                                <Image
+                                  src={cat.fatherImageUrl || FALLBACK_IMAGE}
+                                  alt={cat.father}
+                                  fill
+                                  className="object-cover"
+                                />
+                              </div>
+                              <p className="text-xs font-medium text-center">{cat.father}</p>
                             </div>
-                            <p className="text-xs font-medium">{cat.father}</p>
-                          </div>
+                          )}
 
                           {/* Mother */}
-                          <div className="space-y-2">
-                            <p className="text-xs text-muted-foreground uppercase">{t('breeders.mother')}</p>
-                            <div className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
-                              <Image
-                                src={cat.motherImageUrl || FALLBACK_IMAGE}
-                                alt={cat.mother || "Mother"}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                onError={(e) => {
-                                  const target = e.target as HTMLImageElement;
-                                  target.src = FALLBACK_IMAGE;
-                                }}
-                              />
+                          {cat.mother && (
+                            <div className="space-y-2">
+                              <p className="text-xs text-muted-foreground uppercase">{t('breeders.mother')}</p>
+                              <div className="relative aspect-square rounded-lg overflow-hidden">
+                                <Image
+                                  src={cat.motherImageUrl || FALLBACK_IMAGE}
+                                  alt={cat.mother}
+                                  fill
+                                  className="object-cover"
+                                />
+                              </div>
+                              <p className="text-xs font-medium text-center">{cat.mother}</p>
                             </div>
-                            <p className="text-xs font-medium">{cat.mother}</p>
-                          </div>
+                          )}
                         </div>
                       </div>
 
