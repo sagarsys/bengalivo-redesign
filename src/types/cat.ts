@@ -38,8 +38,17 @@ export type Cat = {
   father?: string;
   mother?: string;
   imageUrl?: string;
+  images?: string[]; // Multiple images for gallery
+  fatherImageUrl?: string;
+  motherImageUrl?: string;
   isAvailable: boolean;
   isFeatured?: boolean;
+  dob?: string;
+  parents?: string;
+  coi?: string;
+  generation?: string;
+  genetics?: string;
+  pedigree?: string;
 };
 
 export type PlannedLitter = {

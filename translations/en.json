@@ -49,6 +49,20 @@
     "newsletterSectionTitle": "Newsletter",
     "newsletterSectionContent": "Do you want to receive the lastest updates in you mailbox? Subscribe to our newsletter and stay in touch!"
   },
+  "breeders": {
+    "title": "Our Breeder Cats",
+    "subtitle": "Meet our exceptional breeding cats, carefully selected for their health, temperament, and stunning appearance.",
+    "dateOfBirth": "Date of Birth:",
+    "generation": "Generation:",
+    "coi": "COI:",
+    "parents": "Parents",
+    "father": "Father",
+    "mother": "Mother",
+    "genetics": "Genetics",
+    "viewPedigree": "View",
+    "aboutBengalivo": "About Bengalivo",
+    "aboutContent": "My name is Ivonne van Dreumel and since 2004 owner of Bengal cats. I live in Drunen which is in the southern part of the Netherlands. Since 2004 my addiction for Bengals started and in 2006 I started breeding with the bengals."
+  },
   "aboutUs": {
     "title": "About Us",
     "subtitle": "Learn about our cattery, our breeding philosophy, and our commitment to producing healthy, well-socialized Bengal cats.",
