@@ -11,15 +11,19 @@ import Image from "next/image";
 import { useKittensData } from "@/hooks/use-kittens-data";
 import { getKittensStructuredData, kittensPageMeta } from "@/seo/kittens";
 import { CONTACT_EMAIL, CONTACT_LOCATION, KITTEN_UPDATE_DATE, KITTEN_BIRTH_DATE, RETIRED_UPDATE_DATE } from "@/constants";
-import { LoadingSpinner } from "@/components/loading-spinner";
+import { LoadingPage } from "@/components/loading-page";
 import { ErrorDisplay } from "@/components/error-display";
+import { KittensPageSkeleton } from "@/components/skeletons/kittens-page-skeleton";
 
 export default function KittensPage() {
   const { kittens, retiredCats, plannedLitters, loading, error } = useKittensData();
 
   const structuredData = getKittensStructuredData(kittens);
 
-  if (loading) return <LoadingSpinner message="Loading kittens..." />;
+  if (loading) {
+    return <LoadingPage skeleton={<KittensPageSkeleton />} />;
+  }
+  
   if (error) return <ErrorDisplay message={error} onRetry={() => window.location.reload()} />;
 
   return (
