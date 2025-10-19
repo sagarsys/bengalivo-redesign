@@ -9,6 +9,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { useKittensData } from "@/hooks/use-kittens-data";
+import { useScrollRestoration } from "@/hooks/use-scroll-restoration";
 import { getKittensStructuredData, kittensPageMeta } from "@/seo/kittens";
 import { CONTACT_EMAIL, CONTACT_LOCATION, KITTEN_UPDATE_DATE, KITTEN_BIRTH_DATE, RETIRED_UPDATE_DATE } from "@/constants";
 import { LoadingPage } from "@/components/loading-page";
@@ -17,6 +18,7 @@ import { KittensPageSkeleton } from "@/components/skeletons/kittens-page-skeleto
 
 export default function KittensPage() {
   const { kittens, retiredCats, plannedLitters, loading, error } = useKittensData();
+  useScrollRestoration();
 
   const structuredData = getKittensStructuredData(kittens);
 
