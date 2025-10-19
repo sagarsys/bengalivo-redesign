@@ -4,12 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
 import { SCROLL_ANIMATION } from "@/constants";
 
-type AboutBengalivoSectionProps = {
+type Props = {
   title: string;
   content: string;
 };
 
-export function AboutBengalivoSection({ title, content }: AboutBengalivoSectionProps) {
+export function AboutBengalivoSection({ title, content }: Props) {
   return (
     <motion.section
       {...SCROLL_ANIMATION}

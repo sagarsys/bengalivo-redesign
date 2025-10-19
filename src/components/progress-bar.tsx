@@ -5,11 +5,11 @@
 
 import { motion } from "framer-motion";
 
-type ProgressBarProps = {
+type Props = {
   show?: boolean;
 };
 
-export function ProgressBar({ show = true }: ProgressBarProps) {
+export function ProgressBar({ show = true }: Props) {
   if (!show) return null;
 
   return (

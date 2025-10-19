@@ -1,12 +1,12 @@
 // Loading component with indeterminate progress bar
 import { ProgressBar } from "./progress-bar";
 
-type LoadingSpinnerProps = {
+type Props = {
   message?: string;
   showMessage?: boolean;
 };
 
-export function LoadingSpinner({ message = "Loading...", showMessage = false }: LoadingSpinnerProps) {
+export function LoadingSpinner({ message = "Loading...", showMessage = false }: Props) {
   return (
     <>
       <ProgressBar show={true} />

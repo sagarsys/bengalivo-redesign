@@ -2,13 +2,13 @@
 import { ProgressBar } from "./progress-bar";
 import { type ReactNode } from "react";
 
-type LoadingPageProps = {
+type Props = {
   message?: string;
   showMessage?: boolean;
   skeleton?: ReactNode;
 };
 
-export function LoadingPage({ message = "Loading...", showMessage = false, skeleton }: LoadingPageProps) {
+export function LoadingPage({ message = "Loading...", showMessage = false, skeleton }: Props) {
   return (
     <>
       <ProgressBar show={true} />

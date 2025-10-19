@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart } from "lucide-react";
 import Image from "next/image";
 import { ImageGallery } from "@/components/image-gallery";
 import { FALLBACK_IMAGE } from "@/utils/image-utils";
@@ -12,6 +11,10 @@ import { useBreedersData } from "@/hooks/use-breeders-data";
 import { LoadingPage } from "@/components/loading-page";
 import { ErrorDisplay } from "@/components/error-display";
 import { BreedersPageSkeleton } from "@/components/skeletons/breeders-page-skeleton";
+import { PageHeader } from "@/components/page-header";
+import { StatusBadges } from "@/components/status-badges";
+import { InfoGrid } from "@/components/info-grid";
+import { AboutBengalivoSection } from "@/components/about-bengalivo-section";
 
 export default function BreedersPage() {
   const { t } = useTranslation();
@@ -28,19 +31,10 @@ export default function BreedersPage() {
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-            {t('breeders.title')}
-          </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('breeders.subtitle')}
-          </p>
-        </motion.div>
+        <PageHeader 
+          title={t('breeders.title')} 
+          subtitle={t('breeders.subtitle')} 
+        />
 
         {/* Breeder Cats Grid */}
         <div className="space-y-16">
@@ -67,32 +61,19 @@ export default function BreedersPage() {
                     <div className="space-y-6">
                       <div>
                         <h3 className="text-2xl sm:text-3xl font-bold mb-2">{cat.name}</h3>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
-                            {cat.gender}
-                          </span>
-                          <span className="text-sm bg-muted px-3 py-1 rounded-full">
-                            {cat.color}
-                          </span>
-                        </div>
+                        <StatusBadges 
+                          items={[cat.gender || '', cat.color || '']} 
+                          variant="primary"
+                        />
                       </div>
 
-                      <div className="space-y-3 text-sm">
-                        <div className="grid grid-cols-2 gap-2">
-                          <span className="text-muted-foreground">{t('breeders.dateOfBirth')}</span>
-                          <span className="font-medium">{cat.dob}</span>
-                        </div>
-                        <div className="grid grid-cols-2 gap-2">
-                          <span className="text-muted-foreground">{t('breeders.generation')}</span>
-                          <span className="font-medium">{cat.generation}</span>
-                        </div>
-                        {cat.coi && (
-                          <div className="grid grid-cols-2 gap-2">
-                            <span className="text-muted-foreground">{t('breeders.coi')}</span>
-                            <span className="font-medium">{cat.coi}</span>
-                          </div>
-                        )}
-                      </div>
+                      <InfoGrid 
+                        items={[
+                          { label: t('breeders.dateOfBirth'), value: cat.dob || '' },
+                          { label: t('breeders.generation'), value: cat.generation || '' },
+                          ...(cat.coi ? [{ label: t('breeders.coi'), value: cat.coi }] : [])
+                        ]}
+                      />
 
                       {/* Parents Section */}
                       <div className="border-t border-border pt-4">
@@ -160,25 +141,10 @@ export default function BreedersPage() {
           ))}
         </div>
 
-        {/* About Bengalivo Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <Card className="bg-gradient-to-r from-primary/15 via-primary/8 to-primary/15">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <Heart className="h-6 w-6 text-primary" />
-                {t('breeders.aboutBengalivo')}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {t('breeders.aboutContent')}
-              </p>
-            </CardContent>
-          </Card>
-        </motion.section>
+        <AboutBengalivoSection 
+          title={t('breeders.aboutBengalivo')} 
+          content={t('breeders.aboutContent')} 
+        />
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 // Skeleton for card components
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-type CardSkeletonProps = {
+type Props = {
   showHeader?: boolean;
   imageHeight?: string;
 };
 
-export function CardSkeleton({ showHeader = true, imageHeight = "h-48" }: CardSkeletonProps) {
+export function CardSkeleton({ showHeader = true, imageHeight = "h-48" }: Props) {
   return (
     <Card className="overflow-hidden">
       {showHeader && (

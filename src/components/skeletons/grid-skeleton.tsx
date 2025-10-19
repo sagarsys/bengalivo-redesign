@@ -1,7 +1,7 @@
 // Skeleton for grid layouts
 import { CardSkeleton } from "./card-skeleton";
 
-type GridSkeletonProps = {
+type Props = {
   count?: number;
   columns?: {
     mobile?: number;
@@ -17,7 +17,7 @@ export function GridSkeleton({
   columns = { mobile: 1, tablet: 2, desktop: 3 },
   showHeader = true,
   imageHeight = "h-48"
-}: GridSkeletonProps) {
+}: Props) {
   const gridClass = `grid grid-cols-${columns.mobile} md:grid-cols-${columns.tablet} lg:grid-cols-${columns.desktop} gap-6`;
   
   return (

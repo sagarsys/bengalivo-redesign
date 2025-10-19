@@ -2,13 +2,13 @@
 import { motion } from "framer-motion";
 import { SCROLL_ANIMATION } from "@/constants";
 
-type SectionHeaderProps = {
+type Props = {
   title: string;
   subtitle?: string;
   centered?: boolean;
 };
 
-export function SectionHeader({ title, subtitle, centered = true }: SectionHeaderProps) {
+export function SectionHeader({ title, subtitle, centered = true }: Props) {
   return (
     <motion.div
       {...SCROLL_ANIMATION}

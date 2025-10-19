@@ -4,14 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SCROLL_ANIMATION } from "@/constants";
 
-type NewsletterSectionProps = {
+type Props = {
   title: string;
   subtitle: string;
   placeholder: string;
   buttonText: string;
 };
 
-export function NewsletterSection({ title, subtitle, placeholder, buttonText }: NewsletterSectionProps) {
+export function NewsletterSection({ title, subtitle, placeholder, buttonText }: Props) {
   return (
     <motion.section
       {...SCROLL_ANIMATION}

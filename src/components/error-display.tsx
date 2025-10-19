@@ -1,12 +1,12 @@
 // Error display component
 import { Button } from "@/components/ui/button";
 
-type ErrorDisplayProps = {
+type Props = {
   message: string;
   onRetry?: () => void;
 };
 
-export function ErrorDisplay({ message, onRetry }: ErrorDisplayProps) {
+export function ErrorDisplay({ message, onRetry }: Props) {
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

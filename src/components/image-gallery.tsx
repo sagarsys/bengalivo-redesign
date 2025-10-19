@@ -6,13 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "./ui/button";
 
-type ImageGalleryProps = {
+type Props = {
   images: string[];
   alt: string;
   currentIndex?: number;
 };
 
-export function ImageGallery({ images, alt, currentIndex = 0 }: ImageGalleryProps) {
+export function ImageGallery({ images, alt, currentIndex = 0 }: Props) {
   const [activeIndex, setActiveIndex] = useState(currentIndex);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 

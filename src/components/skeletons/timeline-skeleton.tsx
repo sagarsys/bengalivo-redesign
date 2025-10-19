@@ -1,10 +1,10 @@
 // Skeleton for timeline/list items
 
-type TimelineSkeletonProps = {
+type Props = {
   count?: number;
 };
 
-export function TimelineSkeleton({ count = 3 }: TimelineSkeletonProps) {
+export function TimelineSkeleton({ count = 3 }: Props) {
   return (
     <div className="space-y-4 max-w-4xl mx-auto">
       {Array.from({ length: count }).map((_, index) => (
