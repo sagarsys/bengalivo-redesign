@@ -139,11 +139,11 @@ export function Slideshow() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-white"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
                 style={{
-                  fontFamily: 'Raleway',
-                  fontWeight: currentSlide === 0 ? 500 : 300,
-                  letterSpacing: '5px',
+                  fontFamily: 'var(--font-oswald)',
+                  fontWeight: currentSlide === 0 ? 600 : 500,
+                  letterSpacing: '3px',
                   textTransform: 'uppercase'
                 }}
               >
@@ -155,11 +155,10 @@ export function Slideshow() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6"
+                className="text-base sm:text-lg md:text-xl text-white/90 mb-6"
                 style={{
-                  fontFamily: currentSlide === 0 ? 'Raleway Dots' : 'inherit',
-                  fontStyle: currentSlide === 0 ? 'italic' : 'normal',
-                  textTransform: currentSlide === 0 ? 'lowercase' : 'none'
+                  fontFamily: 'var(--font-roboto)',
+                  fontWeight: 400
                 }}
               >
                 {slides[currentSlide].subtitle}
