@@ -98,6 +98,7 @@ export function Slideshow() {
               fill
               className="object-cover"
               priority={currentSlide === 0}
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -130,6 +131,7 @@ export function Slideshow() {
                     width={400}
                     height={80}
                     className="mx-auto h-20 w-auto"
+                    style={{ width: 'auto', height: '80px' }}
                   />
                 </motion.div>
               )}
