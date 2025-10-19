@@ -37,7 +37,9 @@ interface PlannedLitter {
   id: string;
   parents: string;
   expected: string;
-  season: string;
+  date: string;
+  displayDate: string;
+  status: 'born' | 'planned';
   note?: string;
 }
 
@@ -68,7 +70,12 @@ export default function KittensPage() {
         const littersResponse = await fetch('/api/content?page=kittens&section=planned-litters');
         const littersData = await littersResponse.json();
         if (littersData && littersData.length > 0 && littersData[0].content) {
-          setPlannedLitters(JSON.parse(littersData[0].content));
+          const litters = JSON.parse(littersData[0].content);
+          // Sort by date, most recent first
+          litters.sort((a: PlannedLitter, b: PlannedLitter) => 
+            new Date(b.date).getTime() - new Date(a.date).getTime()
+          );
+          setPlannedLitters(litters);
         } else {
           setPlannedLitters([]);
         }
@@ -268,6 +275,57 @@ export default function KittensPage() {
           </div>
         </motion.section>
 
+        {/* Planned Litters Section - Timeline Design */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">Planned Litters for 2025/2026</h2>
+            <p className="text-center text-muted-foreground mb-8">
+              The following litters are planned for coming period 😉
+            </p>
+
+            <div className="space-y-4">
+              {plannedLitters.map((litter, index) => (
+                <motion.div
+                  key={litter.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative pl-8 pb-6 border-l-2 border-primary/30 last:border-0 last:pb-0"
+                >
+                  {/* Timeline dot */}
+                  <div className={`absolute left-[-9px] top-0 w-4 h-4 rounded-full border-2 border-primary ${
+                    litter.status === 'born' ? 'bg-primary' : 'bg-background'
+                  }`}></div>
+                  
+                  <div className="bg-card rounded-lg p-6 hover:shadow-elegant transition-all duration-300 border border-border/50">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+                      <div>
+                        <Badge variant={litter.status === 'born' ? 'default' : 'secondary'} className="mb-2">
+                          {litter.status === 'born' ? '✓ Born' : 'Planned'}
+                        </Badge>
+                        <p className="text-sm text-muted-foreground font-medium">{litter.displayDate}</p>
+                      </div>
+                      {litter.note && (
+                        <Badge variant="outline" className="text-xs w-fit">
+                          {litter.note}
+                        </Badge>
+                      )}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">{litter.parents}</h3>
+                    <p className="text-muted-foreground text-sm">{litter.expected}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
         {/* Adopting a Kitten Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -288,41 +346,6 @@ export default function KittensPage() {
                 <Heart className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-          </div>
-        </motion.section>
-
-        {/* Planned Litters Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Planned Litters for 2025/2026</h2>
-          
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4 text-center">
-              The following litters are planned for coming period 😉
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {plannedLitters.map((litter) => (
-              <Card key={litter.id} className="hover:shadow-elegant transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="space-y-3">
-                    <p className="font-semibold">{litter.parents}</p>
-                    <p className="text-muted-foreground">({litter.expected})</p>
-                    <p className="text-sm text-muted-foreground">{litter.season}</p>
-                    {litter.note && (
-                      <Badge variant="outline" className="text-xs">
-                        {litter.note}
-                      </Badge>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </motion.section>
 

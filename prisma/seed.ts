@@ -59,8 +59,8 @@ async function main() {
         color: 'Brown Spotted',
         age: 'Born 12 april 2025',
         description: 'Beautiful brown spotted Bengal kitten with excellent temperament.',
-        isAvailable: false,
-        imageUrl: '/images/kitten-expected.jpg'
+        isAvailable: true,
+        imageUrl: '/images/kittens/bengalivo-push-the-button.jpg'
       }
     ]
   })
@@ -78,7 +78,7 @@ async function main() {
         age: '5 years',
         description: 'Gold is recently spayed due to a pyometra and is looking for a new home. She can live alone but also with other cats.',
         isAvailable: true,
-        imageUrl: '/images/retired-cat-gold.jpg'
+        imageUrl: '/images/kittens/miodollarbaby.jpg'
       }
     ]
   })
@@ -93,43 +93,55 @@ async function main() {
         content: JSON.stringify([
           {
             id: 1,
-            parents: 'Bengalivo Armed With Love x Batifoleurs Zawadi',
-            expected: 'brown kittens expected',
-            season: 'Winter 2025',
-            note: 'only pets/breeders on request'
+            parents: 'Bengalivo Cry Baby x Bengalivo Another One Bites Dust',
+            expected: 'brown and mink kittens expected',
+            date: '2025-09-18',
+            displayDate: 'Kittens born 18 september 2025',
+            status: 'born'
           },
           {
             id: 2,
-            parents: 'Bengalivo Cry Baby x Bengalivo Another One Bites Dust',
-            expected: 'brown and mink kittens expected',
-            season: 'Kittens born 18 september 2025'
+            parents: 'Bengalivo Stumblin\'In x Hypnotic\'bengal Unstoppable',
+            expected: 'brown and sepia kittens expected',
+            date: '2025-08-31',
+            displayDate: 'Kittens born 31 august 2025',
+            status: 'born',
+            note: 'only pets'
           },
           {
             id: 3,
-            parents: 'Bengalivo Stumblin\'In x Hypnotic\'bengal Unstoppable',
-            expected: 'brown and sepia kittens expected',
-            season: 'Kittens born 31 august 2025',
+            parents: 'Bengalivo Femme Fatale x Hypnotic\'bengal Unstoppable',
+            expected: 'sepia kittens expected',
+            date: '2025-10-10',
+            displayDate: 'Kittens born 10 october 2025',
+            status: 'born',
             note: 'only pets'
           },
           {
             id: 4,
-            parents: 'Bengalivo Just Give Me A Reason x TBA',
+            parents: 'MioDollarBaby Maya x Hypnotic\'bengal Unstoppable',
             expected: 'brown kittens expected',
-            season: 'Winter 2025'
+            date: '2025-11-15',
+            displayDate: 'Autumn 2025 (last litter Maya)',
+            status: 'planned',
+            note: 'only pets'
           },
           {
             id: 5,
-            parents: 'Bengalivo Femme Fatale x Hypnotic\'bengal Unstoppable',
-            expected: 'sepia kittens expected',
-            season: 'Kittens born 10 october 2025',
-            note: 'only pets'
+            parents: 'Bengalivo Armed With Love x Batifoleurs Zawadi',
+            expected: 'brown kittens expected',
+            date: '2025-12-15',
+            displayDate: 'Winter 2025',
+            status: 'planned',
+            note: 'only pets/breeders on request'
           },
           {
             id: 6,
-            parents: 'MioDollarBaby Maya x Hypnotic\'bengal Unstoppable',
+            parents: 'Bengalivo Just Give Me A Reason x TBA',
             expected: 'brown kittens expected',
-            season: 'Autumn 2025 (last litter Maya)',
-            note: 'only pets'
+            date: '2026-01-15',
+            displayDate: 'Winter 2026',
+            status: 'planned'
           }
         ]),
         order: 1
