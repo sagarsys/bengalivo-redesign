@@ -65,6 +65,7 @@ export function Navigation() {
                 width={80}
                 height={80}
                 className="h-20 w-auto"
+                priority
               />
             </motion.div>
           </Link>
