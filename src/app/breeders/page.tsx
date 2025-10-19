@@ -78,12 +78,11 @@ export default function BreedersPage() {
                       {/* Parents Section */}
                       <div className="border-t border-border pt-4">
                         <h4 className="font-semibold mb-3">{t('breeders.parents')}</h4>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="flex gap-6">
                           {/* Father */}
                           {cat.father && (
-                            <div className="space-y-2">
-                              <p className="text-xs text-muted-foreground uppercase">{t('breeders.father')}</p>
-                              <div className="relative aspect-square rounded-lg overflow-hidden">
+                            <div className="flex items-center gap-3 flex-1">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-border flex-shrink-0">
                                 <Image
                                   src={cat.fatherImageUrl || FALLBACK_IMAGE}
                                   alt={cat.father}
@@ -91,15 +90,17 @@ export default function BreedersPage() {
                                   className="object-cover"
                                 />
                               </div>
-                              <p className="text-xs font-medium text-center">{cat.father}</p>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs text-muted-foreground uppercase mb-1">{t('breeders.father')}</p>
+                                <p className="text-xs font-medium truncate">{cat.father}</p>
+                              </div>
                             </div>
                           )}
 
                           {/* Mother */}
                           {cat.mother && (
-                            <div className="space-y-2">
-                              <p className="text-xs text-muted-foreground uppercase">{t('breeders.mother')}</p>
-                              <div className="relative aspect-square rounded-lg overflow-hidden">
+                            <div className="flex items-center gap-3 flex-1">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-border flex-shrink-0">
                                 <Image
                                   src={cat.motherImageUrl || FALLBACK_IMAGE}
                                   alt={cat.mother}
@@ -107,7 +108,10 @@ export default function BreedersPage() {
                                   className="object-cover"
                                 />
                               </div>
-                              <p className="text-xs font-medium text-center">{cat.mother}</p>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs text-muted-foreground uppercase mb-1">{t('breeders.mother')}</p>
+                                <p className="text-xs font-medium truncate">{cat.mother}</p>
+                              </div>
                             </div>
                           )}
                         </div>
