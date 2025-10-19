@@ -12,48 +12,44 @@ export function NewsletterPopup() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
-  const [interactionCount, setInteractionCount] = useState(0);
   const { t } = useTranslation();
 
   useEffect(() => {
     // Check if user has already subscribed or dismissed
     const hasSubscribed = localStorage.getItem('newsletter-subscribed');
     const hasDismissed = localStorage.getItem('newsletter-dismissed');
+    const hasShownPopup = localStorage.getItem('newsletter-shown');
     
-    if (hasSubscribed || hasDismissed) {
+    if (hasSubscribed || hasDismissed || hasShownPopup) {
       return;
     }
 
-    // Show popup after user has interacted with the site for a bit
-    const checkInteraction = () => {
-      const currentCount = interactionCount + 1;
-      setInteractionCount(currentCount);
+    // Show popup when user reaches the end of the page
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
       
-      // Show popup after 3 interactions (clicks, scrolls, etc.)
-      if (currentCount >= 3) {
-        // Add a small delay to make it feel natural
+      // Check if user has scrolled to the bottom (within 100px)
+      if (scrollTop + windowHeight >= documentHeight - 100) {
+        // Mark as shown and show popup
+        localStorage.setItem('newsletter-shown', 'true');
         setTimeout(() => {
           setIsVisible(true);
-        }, 2000);
+        }, 1000);
+        
+        // Remove the scroll listener since we only want to show it once
+        window.removeEventListener('scroll', handleScroll);
       }
     };
 
-    // Track various user interactions
-    const handleInteraction = () => {
-      checkInteraction();
-    };
-
-    // Add event listeners for user interactions
-    document.addEventListener('click', handleInteraction);
-    document.addEventListener('scroll', handleInteraction, { passive: true });
-    document.addEventListener('keydown', handleInteraction);
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('scroll', handleInteraction);
-      document.removeEventListener('keydown', handleInteraction);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [interactionCount]);
+  }, []);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();

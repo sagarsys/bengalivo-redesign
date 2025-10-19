@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 // Data based on original website content
 const retiredCats = [
@@ -137,105 +138,6 @@ export default function KittensPage() {
           </h1>
         </motion.div>
 
-        {/* Adopting a Kitten Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-              Adopting a Kitten?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Click here to learn everything you need to know about adopting a kitten from Cattery Bengalivo.
-            </p>
-            <Button asChild size="lg">
-              <Link href="/contact">
-                Info about Kitten adoption
-                <Heart className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </motion.section>
-
-        {/* Newsletter Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">Latest Kittens news in your mailbox?</h3>
-              <p className="text-muted-foreground mb-6">Subscribe to our newsletter!</p>
-              <div className="max-w-md mx-auto">
-                <div className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="flex-1 px-4 py-2 rounded-lg border border-border bg-background text-foreground"
-                  />
-                  <Button>Subscribe</Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.section>
-
-        {/* Retired Cats Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Retired cats available</h2>
-          
-          <div className="mb-6">
-            <p className="text-muted-foreground text-center">
-              <strong>Update 21 september 2025</strong> – at this moment some retired cats are available.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {retiredCats.map((cat) => (
-              <Card key={cat.id} className="hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="flex justify-between items-center">
-                    <span className="text-lg">{cat.name}</span>
-                    <Badge variant="secondary" className="bg-green-100 text-green-800">
-                      {cat.status}
-                    </Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="relative w-full h-48 rounded-lg overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                      <Heart className="h-16 w-16 text-primary" />
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Adoption fee is {cat.adoptionFee}</strong>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Searching for a {cat.lookingFor}
-                  </p>
-                  <p className="text-sm leading-relaxed">{cat.description}</p>
-                  <p className="text-xs text-muted-foreground">
-                    In case you are interested, please send a message to: catterybengalivo@gmail.com
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    In case you are interested in a retired bengal, please send me a PM to discuss the details! Sometimes I already decide to retire some bengals.
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </motion.section>
-
         {/* Kittens Expected/Available Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -270,9 +172,12 @@ export default function KittensPage() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="relative w-full h-48 rounded-lg overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                      <Heart className="h-16 w-16 text-primary" />
-                    </div>
+                    <Image
+                      src="/images/kitten-expected.jpg"
+                      alt={kitten.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <p className="text-sm text-muted-foreground">Age: {kitten.age}</p>
                   <p className="text-sm text-muted-foreground">Gender: {kitten.gender}</p>
@@ -286,6 +191,83 @@ export default function KittensPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </motion.section>
+
+        {/* Retired Cats Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Retired cats available</h2>
+          
+          <div className="mb-6">
+            <p className="text-muted-foreground text-center">
+              <strong>Update 21 september 2025</strong> – at this moment some retired cats are available.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {retiredCats.map((cat) => (
+              <Card key={cat.id} className="hover:shadow-elegant transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="flex justify-between items-center">
+                    <span className="text-lg">{cat.name}</span>
+                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                      {cat.status}
+                    </Badge>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                    <Image
+                      src="/images/retired-cat-gold.jpg"
+                      alt={cat.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Adoption fee is {cat.adoptionFee}</strong>
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Searching for a {cat.lookingFor}
+                  </p>
+                  <p className="text-sm leading-relaxed">{cat.description}</p>
+                  <p className="text-xs text-muted-foreground">
+                    In case you are interested, please send a message to: catterybengalivo@gmail.com
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    In case you are interested in a retired bengal, please send me a PM to discuss the details! Sometimes I already decide to retire some bengals.
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Adopting a Kitten Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+              Adopting a Kitten?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              Click here to learn everything you need to know about adopting a kitten from Cattery Bengalivo.
+            </p>
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Info about Kitten adoption
+                <Heart className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </motion.section>
 
@@ -344,6 +326,31 @@ export default function KittensPage() {
           </Card>
         </motion.section>
 
+        {/* Newsletter Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+            <CardContent className="p-8 text-center">
+              <h3 className="text-2xl font-bold mb-4">Latest Kittens news in your mailbox?</h3>
+              <p className="text-muted-foreground mb-6">Subscribe to our newsletter!</p>
+              <div className="max-w-md mx-auto">
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    className="flex-1 px-4 py-2 rounded-lg border border-border bg-background text-foreground"
+                  />
+                  <Button>Subscribe</Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.section>
+
         {/* Contact Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -374,22 +381,6 @@ export default function KittensPage() {
                 </div>
               </div>
 
-              <div>
-                <h4 className="text-xl font-semibold mb-4">Newsletter</h4>
-                <p className="text-muted-foreground mb-4">
-                  Do you want to receive the lastest updates in you mailbox? Subscribe to our newsletter and stay in touch!
-                </p>
-                <div className="max-w-md">
-                  <div className="flex gap-2">
-                    <input
-                      type="email"
-                      placeholder="Your email address"
-                      className="flex-1 px-4 py-2 rounded-lg border border-border bg-background text-foreground"
-                    />
-                    <Button>Subscribe</Button>
-                  </div>
-                </div>
-              </div>
             </CardContent>
           </Card>
         </motion.section>

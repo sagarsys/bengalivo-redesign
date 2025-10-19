@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Mail, MapPin, Crown } from "lucide-react";
+import { Heart, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 // Data based on original website content
 const breederCats = [
@@ -166,13 +167,17 @@ export default function BreedersPage() {
               transition={{ delay: index * 0.1 }}
             >
               <Card className="overflow-hidden hover:shadow-elegant transition-all duration-300">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center relative">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Crown className="h-12 w-12 text-primary" />
-                    </div>
-                    <p className="text-muted-foreground">Cat Photo</p>
-                  </div>
+                <div className="aspect-video relative overflow-hidden">
+                  <Image
+                    src={`/images/breeder-${cat.name.toLowerCase().split(' ')[1] || 'default'}.jpg`}
+                    alt={cat.name}
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/images/breeder1.jpg'; // fallback image
+                    }}
+                  />
                 </div>
                 
                 <CardContent className="p-6">

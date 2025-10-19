@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Oswald } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
@@ -8,14 +8,16 @@ import { I18nProvider } from "@/components/i18n-provider";
 import { CookieBanner } from "@/components/cookie-banner";
 import { NewsletterPopup } from "@/components/newsletter-popup";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Bengalivo - Bengal Cat Cattery in the Netherlands",
-    description: "Premium Bengal cat breeding with focus on health, temperament, and wild beauty. TICA registered cattery since 2004.",
+    description: "Bengal cat breeding with focus on health, temperament, and wild beauty. TICA registered cattery since 2004.",
     type: "website",
     url: "https://bengalivo.com",
     siteName: "Bengalivo",
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bengalivo - Bengal Cat Cattery in the Netherlands",
-    description: "Premium Bengal cat breeding with focus on health, temperament, and wild beauty.",
+    description: "Bengal cat breeding with focus on health, temperament, and wild beauty.",
     images: ["/images/slide1.jpg"],
   },
   alternates: {
@@ -88,7 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.variable} ${oswald.variable} antialiased`}
       >
         <I18nProvider>
           <UserProvider>

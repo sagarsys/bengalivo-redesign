@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -17,15 +17,25 @@ const getNavigationItems = (t: (key: string) => string) => [
   { name: t('navigation.about'), href: "/about-us" },
   { name: t('navigation.kittens'), href: "/kittens" },
   { name: t('navigation.breederCats'), href: "/breeders" },
-  { name: t('navigation.theBengal'), href: "/about" },
+  { name: t('navigation.theBengal'), href: "/bengal" },
   { name: t('navigation.contact'), href: "/contact" },
 ];
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const { data: session } = useSession();
   const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   const navigationItems = getNavigationItems(t);
   
@@ -34,7 +44,11 @@ export function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className={`sticky top-0 z-50 w-full border-b border-border/40 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-background/80 backdrop-blur-md' 
+        : 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'
+    }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -47,11 +61,11 @@ export function Navigation() {
               <Image
                 src="/images/logo-wit.png"
                 alt="Bengalivo"
-                width={40}
-                height={40}
-                className="h-8 w-auto"
+                width={50}
+                height={50}
+                className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-gradient">Bengalivo</span>
+              <span className="text-lg font-semibold text-gradient">Bengalivo</span>
             </motion.div>
           </Link>
 

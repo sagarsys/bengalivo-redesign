@@ -183,7 +183,7 @@ export function Slideshow() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
               >
-                <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg border border-primary/20">
                   <Link href={slides[currentSlide].buttonLink}>
                     {slides[currentSlide].buttonText}
                     <ArrowRight className="ml-2 h-5 w-5" />

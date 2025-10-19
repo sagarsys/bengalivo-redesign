@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Camera } from "lucide-react";
 import Image from "next/image";
 import { useTranslation } from 'react-i18next';
 
@@ -30,7 +30,7 @@ export function Footer() {
               <span className="text-xl font-bold text-gradient">Bengalivo</span>
             </motion.div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Premium Bengal cat breeding with a focus on health, temperament, and beauty. 
+              Bengal cat breeding with a focus on health, temperament, and beauty. 
               Your trusted source for exceptional Bengal companions.
             </p>
             <div className="flex space-x-4">
@@ -55,6 +55,17 @@ export function Footer() {
                 aria-label="Follow us on Instagram"
               >
                 <Instagram className="h-6 w-6" />
+              </motion.a>
+              <motion.a
+                href="https://www.flickr.com/photos/bengalivo"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Flickr"
+              >
+                <Camera className="h-6 w-6" />
               </motion.a>
             </div>
           </div>
