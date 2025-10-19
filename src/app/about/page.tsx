@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Home, Mail, PawPrint, TreePine, Baby } from "lucide-react";
+import Image from "next/image";
 
-export default function AboutUsPage() {
+export default function AboutPage() {
 
   return (
     <div className="min-h-screen py-12">
@@ -117,7 +118,18 @@ export default function AboutUsPage() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Living Room</h3>
                   <div className="relative h-48 w-full mb-4">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/images/living-room.jpg"
+                      alt="Living room with cats"
+                      fill
+                      className="object-cover rounded-lg"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center hidden">
                       <Home className="h-16 w-16 text-primary" />
                     </div>
                   </div>
@@ -132,7 +144,18 @@ export default function AboutUsPage() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Toys & Catwheels</h3>
                   <div className="relative h-48 w-full mb-4">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/images/catwheels.jpg"
+                      alt="Catwheels and toys"
+                      fill
+                      className="object-cover rounded-lg"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center hidden">
                       <PawPrint className="h-16 w-16 text-primary" />
                     </div>
                   </div>
@@ -147,7 +170,18 @@ export default function AboutUsPage() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Outdoors</h3>
                   <div className="relative h-48 w-full mb-4">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/images/outdoor-enclosure.jpg"
+                      alt="Outdoor enclosure"
+                      fill
+                      className="object-cover rounded-lg"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center hidden">
                       <TreePine className="h-16 w-16 text-primary" />
                     </div>
                   </div>
