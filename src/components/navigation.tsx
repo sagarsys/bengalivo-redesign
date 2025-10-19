@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 const getNavigationItems = (t: (key: string) => string) => [
   { name: t('navigation.home'), href: "/" },
-  { name: t('navigation.about'), href: "/about-us" },
+  { name: t('navigation.about'), href: "/about" },
   { name: t('navigation.kittens'), href: "/kittens" },
   { name: t('navigation.breederCats'), href: "/breeders" },
   { name: t('navigation.theBengal'), href: "/bengal" },

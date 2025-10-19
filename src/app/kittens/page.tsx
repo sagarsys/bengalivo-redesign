@@ -8,85 +8,80 @@ import { Heart, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
-// Data based on original website content
-const retiredCats = [
-  {
-    id: 1,
-    name: "MioDollarBaby Unik aka Gold",
-    age: "5 years",
-    gender: "Female",
-    color: "Brown Spotted",
-    status: "AVAILABLE",
-    description: "Gold is recently spayed due to a pyometra and is looking for a new home. She can live alone but also with other cats.",
-    adoptionFee: "350 euro",
-    updateDate: "21 september 2025",
-    lookingFor: "5 ⭐️ home"
-  }
-];
+interface Kitten {
+  id: string;
+  name: string;
+  age: string;
+  gender: string;
+  color: string;
+  price?: string;
+  isAvailable: boolean;
+  description: string;
+  imageUrl?: string;
+}
 
-const kittens = [
-  {
-    id: 1,
-    name: "Bengalivo Push The Button",
-    age: "Born 12 april 2025",
-    gender: "Male",
-    color: "Brown Spotted",
-    price: "Available",
-    available: false,
-    status: "RESERVED",
-    birthDate: "April 12, 2025",
-    description: "Beautiful brown spotted Bengal kitten with excellent temperament.",
-    parents: "Bengalivo Armed With Love x Batifoleurs Zawadi",
-    neutered: true
-  }
-];
+interface RetiredCat {
+  id: string;
+  name: string;
+  age: string;
+  gender: string;
+  color: string;
+  description: string;
+  isAvailable: boolean;
+  imageUrl?: string;
+}
 
-const plannedLitters = [
-  {
-    id: 1,
-    parents: "Bengalivo Armed With Love x Batifoleurs Zawadi",
-    expected: "brown kittens expected",
-    season: "Winter 2025",
-    note: "only pets/breeders on request"
-  },
-  {
-    id: 2,
-    parents: "Bengalivo Cry Baby x Bengalivo Another One Bites Dust",
-    expected: "brown and mink kittens expected",
-    season: "Kittens born 18 september 2025"
-  },
-  {
-    id: 3,
-    parents: "Bengalivo Stumblin'In x Hypnotic'bengal Unstoppable",
-    expected: "brown and sepia kittens expected",
-    season: "Kittens born 31 august 2025",
-    note: "only pets"
-  },
-  {
-    id: 4,
-    parents: "Bengalivo Just Give Me A Reason x TBA",
-    expected: "brown kittens expected",
-    season: "Winter 2025"
-  },
-  {
-    id: 5,
-    parents: "Bengalivo Femme Fatale x Hypnotic'bengal Unstoppable",
-    expected: "sepia kittens expected",
-    season: "Kittens born 10 october 2025",
-    note: "only pets"
-  },
-  {
-    id: 6,
-    parents: "MioDollarBaby Maya x Hypnotic'bengal Unstoppable",
-    expected: "brown kittens expected",
-    season: "Autumn 2025 (last litter Maya)",
-    note: "only pets"
-  }
-];
+interface PlannedLitter {
+  id: string;
+  parents: string;
+  expected: string;
+  season: string;
+  note?: string;
+}
+
 
 export default function KittensPage() {
+  const [kittens, setKittens] = useState<Kitten[]>([]);
+  const [retiredCats, setRetiredCats] = useState<RetiredCat[]>([]);
+  const [plannedLitters, setPlannedLitters] = useState<PlannedLitter[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        
+        // Fetch kittens
+        const kittensResponse = await fetch('/api/cats?type=kitten');
+        const kittensData = await kittensResponse.json();
+        setKittens(kittensData || []);
+
+        // Fetch retired cats
+        const retiredResponse = await fetch('/api/cats?type=retired');
+        const retiredData = await retiredResponse.json();
+        setRetiredCats(retiredData || []);
+
+        // Fetch planned litters from content API
+        const littersResponse = await fetch('/api/content?page=kittens&section=planned-litters');
+        const littersData = await littersResponse.json();
+        if (littersData && littersData.length > 0 && littersData[0].content) {
+          setPlannedLitters(JSON.parse(littersData[0].content));
+        } else {
+          setPlannedLitters([]);
+        }
+
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to fetch data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // Structured data for SEO
   const structuredData = {
@@ -108,12 +103,38 @@ export default function KittensPage() {
       },
       "offers": {
         "@type": "Offer",
-        "price": kitten.price,
+        "price": kitten.price || "Contact for price",
         "priceCurrency": "EUR",
-        "availability": kitten.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+        "availability": kitten.isAvailable ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
       }
     }))
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Loading kittens...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-red-500 mb-4">Error: {error}</p>
+            <Button onClick={() => window.location.reload()}>Try Again</Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen py-12">
@@ -165,15 +186,15 @@ export default function KittensPage() {
                 <CardHeader>
                   <CardTitle className="flex justify-between items-center">
                     <span className="text-lg">{kitten.name}</span>
-                    <Badge variant="secondary">
-                      {kitten.status}
+                    <Badge variant={kitten.isAvailable ? "default" : "secondary"}>
+                      {kitten.isAvailable ? "AVAILABLE" : "RESERVED"}
                     </Badge>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="relative w-full h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="/images/kitten-expected.jpg"
+                      src={kitten.imageUrl || "/images/kitten-expected.jpg"}
                       alt={kitten.name}
                       fill
                       className="object-cover"
@@ -182,11 +203,8 @@ export default function KittensPage() {
                   <p className="text-sm text-muted-foreground">Age: {kitten.age}</p>
                   <p className="text-sm text-muted-foreground">Gender: {kitten.gender}</p>
                   <p className="text-sm text-muted-foreground">Color: {kitten.color}</p>
-                  <p className="text-sm text-muted-foreground">Parents: {kitten.parents}</p>
-                  {kitten.neutered && (
-                    <Badge variant="outline" className="text-xs">
-                      Neutered
-                    </Badge>
+                  {kitten.price && (
+                    <p className="text-sm text-muted-foreground">Price: {kitten.price}</p>
                   )}
                 </CardContent>
               </Card>
@@ -215,32 +233,26 @@ export default function KittensPage() {
                 <CardHeader>
                   <CardTitle className="flex justify-between items-center">
                     <span className="text-lg">{cat.name}</span>
-                    <Badge variant="secondary" className="bg-green-100 text-green-800">
-                      {cat.status}
+                    <Badge variant="default" className="bg-green-100 text-green-800">
+                      AVAILABLE
                     </Badge>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="relative w-full h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="/images/retired-cat-gold.jpg"
+                      src={cat.imageUrl || "/images/retired-cat-gold.jpg"}
                       alt={cat.name}
                       fill
                       className="object-cover"
                     />
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Adoption fee is {cat.adoptionFee}</strong>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Searching for a {cat.lookingFor}
-                  </p>
+                  <p className="text-sm text-muted-foreground">Age: {cat.age}</p>
+                  <p className="text-sm text-muted-foreground">Gender: {cat.gender}</p>
+                  <p className="text-sm text-muted-foreground">Color: {cat.color}</p>
                   <p className="text-sm leading-relaxed">{cat.description}</p>
                   <p className="text-xs text-muted-foreground">
                     In case you are interested, please send a message to: catterybengalivo@gmail.com
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    In case you are interested in a retired bengal, please send me a PM to discuss the details! Sometimes I already decide to retire some bengals.
                   </p>
                 </CardContent>
               </Card>

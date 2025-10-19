@@ -48,6 +48,95 @@ async function main() {
     }
   })
 
+  // Kittens
+  await prisma.cat.createMany({
+    data: [
+      {
+        name: 'Bengalivo Push The Button',
+        fullName: 'Bengalivo Push The Button',
+        type: 'kitten',
+        gender: 'male',
+        color: 'Brown Spotted',
+        age: 'Born 12 april 2025',
+        description: 'Beautiful brown spotted Bengal kitten with excellent temperament.',
+        isAvailable: false,
+        imageUrl: '/images/kitten-expected.jpg'
+      }
+    ]
+  })
+
+  // Retired cats
+  await prisma.cat.createMany({
+    data: [
+      {
+        name: 'MioDollarBaby Unik aka Gold',
+        fullName: 'MioDollarBaby Unik aka Gold',
+        nickname: 'Gold',
+        type: 'retired',
+        gender: 'female',
+        color: 'Brown Spotted',
+        age: '5 years',
+        description: 'Gold is recently spayed due to a pyometra and is looking for a new home. She can live alone but also with other cats.',
+        isAvailable: true,
+        imageUrl: '/images/retired-cat-gold.jpg'
+      }
+    ]
+  })
+
+  // Planned litters content
+  await prisma.pageContent.createMany({
+    data: [
+      {
+        page: 'kittens',
+        section: 'planned-litters',
+        title: 'Planned Litters for 2025/2026',
+        content: JSON.stringify([
+          {
+            id: 1,
+            parents: 'Bengalivo Armed With Love x Batifoleurs Zawadi',
+            expected: 'brown kittens expected',
+            season: 'Winter 2025',
+            note: 'only pets/breeders on request'
+          },
+          {
+            id: 2,
+            parents: 'Bengalivo Cry Baby x Bengalivo Another One Bites Dust',
+            expected: 'brown and mink kittens expected',
+            season: 'Kittens born 18 september 2025'
+          },
+          {
+            id: 3,
+            parents: 'Bengalivo Stumblin\'In x Hypnotic\'bengal Unstoppable',
+            expected: 'brown and sepia kittens expected',
+            season: 'Kittens born 31 august 2025',
+            note: 'only pets'
+          },
+          {
+            id: 4,
+            parents: 'Bengalivo Just Give Me A Reason x TBA',
+            expected: 'brown kittens expected',
+            season: 'Winter 2025'
+          },
+          {
+            id: 5,
+            parents: 'Bengalivo Femme Fatale x Hypnotic\'bengal Unstoppable',
+            expected: 'sepia kittens expected',
+            season: 'Kittens born 10 october 2025',
+            note: 'only pets'
+          },
+          {
+            id: 6,
+            parents: 'MioDollarBaby Maya x Hypnotic\'bengal Unstoppable',
+            expected: 'brown kittens expected',
+            season: 'Autumn 2025 (last litter Maya)',
+            note: 'only pets'
+          }
+        ]),
+        order: 1
+      }
+    ]
+  })
+
   // Contact information
   await prisma.contactInfo.createMany({
     data: [
