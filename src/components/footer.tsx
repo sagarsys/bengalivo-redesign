@@ -23,11 +23,11 @@ export function Footer() {
               <Image
                 src="/images/logo-wit.png"
                 alt="Bengalivo"
-                width={32}
-                height={32}
-                className="h-8 w-auto"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-gradient">Bengalivo</span>
+              <span className="text-lg font-semibold text-gradient">Bengalivo</span>
             </motion.div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Bengal cat breeding with a focus on health, temperament, and beauty. 

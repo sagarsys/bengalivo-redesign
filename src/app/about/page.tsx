@@ -89,12 +89,25 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Baby className="h-16 w-16 text-primary" />
+                <div className="aspect-square relative overflow-hidden rounded-2xl">
+                  <Image
+                    src="/images/about-kitten-cage.jpg"
+                    alt="Kitten cage in nursing room"
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center hidden">
+                    <div className="text-center">
+                      <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Baby className="h-16 w-16 text-primary" />
+                      </div>
+                      <p className="text-muted-foreground">Kitten Cage Photo</p>
                     </div>
-                    <p className="text-muted-foreground">Kitten Cage Photo</p>
                   </div>
                 </div>
               </div>
@@ -119,7 +132,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-4">Living Room</h3>
                   <div className="relative h-48 w-full mb-4">
                     <Image
-                      src="/images/living-room.jpg"
+                      src="/images/about-living-room.jpg"
                       alt="Living room with cats"
                       fill
                       className="object-cover rounded-lg"
@@ -145,7 +158,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-4">Toys & Catwheels</h3>
                   <div className="relative h-48 w-full mb-4">
                     <Image
-                      src="/images/catwheels.jpg"
+                      src="/images/about-toys-catwheels.jpg"
                       alt="Catwheels and toys"
                       fill
                       className="object-cover rounded-lg"
@@ -171,7 +184,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-4">Outdoors</h3>
                   <div className="relative h-48 w-full mb-4">
                     <Image
-                      src="/images/outdoor-enclosure.jpg"
+                      src="/images/about-outdoors.jpg"
                       alt="Outdoor enclosure"
                       fill
                       className="object-cover rounded-lg"

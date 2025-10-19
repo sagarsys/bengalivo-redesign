@@ -11,6 +11,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useSession, signOut } from "next-auth/react";
 import { useTranslation } from 'react-i18next';
+import { LanguagePicker } from "@/components/language-picker";
 
 const getNavigationItems = (t: (key: string) => string) => [
   { name: t('navigation.home'), href: "/" },
@@ -61,11 +62,11 @@ export function Navigation() {
               <Image
                 src="/images/logo-wit.png"
                 alt="Bengalivo"
-                width={50}
-                height={50}
-                className="h-10 w-auto"
+                width={60}
+                height={60}
+                className="h-12 w-auto"
               />
-              <span className="text-lg font-semibold text-gradient">Bengalivo</span>
+              <span className="text-sm font-medium text-gradient">Bengalivo</span>
             </motion.div>
           </Link>
 
@@ -99,15 +100,7 @@ export function Navigation() {
             ))}
             
                     {/* Language Switcher */}
-                    <Select value={i18n.language} onValueChange={changeLanguage}>
-                      <SelectTrigger className="w-16 h-8 text-sm">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="en">EN</SelectItem>
-                        <SelectItem value="nl">NL</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <LanguagePicker />
 
                     {/* Social Media Links */}
                     <div className="flex items-center space-x-2">

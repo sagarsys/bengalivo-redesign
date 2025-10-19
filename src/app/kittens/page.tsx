@@ -198,6 +198,10 @@ export default function KittensPage() {
                       alt={kitten.name}
                       fill
                       className="object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/images/kitten-expected.jpg";
+                      }}
                     />
                   </div>
                   <p className="text-sm text-muted-foreground">Age: {kitten.age}</p>
@@ -245,6 +249,10 @@ export default function KittensPage() {
                       alt={cat.name}
                       fill
                       className="object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/images/retired-cat-gold.jpg";
+                      }}
                     />
                   </div>
                   <p className="text-sm text-muted-foreground">Age: {cat.age}</p>
