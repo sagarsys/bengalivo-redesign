@@ -11,20 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Plus, Edit, Trash2, Save, X } from 'lucide-react';
-
-interface PageContent {
-  id: string;
-  page: string;
-  section: string;
-  title?: string;
-  subtitle?: string;
-  content?: string;
-  imageUrl?: string;
-  buttonText?: string;
-  buttonLink?: string;
-  order: number;
-  isActive: boolean;
-}
+import type { PageContent } from '@/types';
 
 export default function ContentManagement() {
   const { status } = useSession();

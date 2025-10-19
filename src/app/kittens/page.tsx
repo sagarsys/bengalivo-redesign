@@ -9,40 +9,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-
-interface Kitten {
-  id: string;
-  name: string;
-  age: string;
-  gender: string;
-  color: string;
-  price?: string;
-  isAvailable: boolean;
-  description: string;
-  imageUrl?: string;
-}
-
-interface RetiredCat {
-  id: string;
-  name: string;
-  age: string;
-  gender: string;
-  color: string;
-  description: string;
-  isAvailable: boolean;
-  imageUrl?: string;
-}
-
-interface PlannedLitter {
-  id: string;
-  parents: string;
-  expected: string;
-  date: string;
-  displayDate: string;
-  status: 'born' | 'planned';
-  note?: string;
-}
-
+import type { Kitten, RetiredCat, PlannedLitter } from "@/types";
 
 export default function KittensPage() {
   const [kittens, setKittens] = useState<Kitten[]>([]);

@@ -11,25 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Plus, Edit, Trash2, Save, X } from 'lucide-react';
 import { ImageUpload } from '@/components/image-upload';
 import Image from 'next/image';
-
-interface Cat {
-  id: string;
-  name: string;
-  fullName?: string;
-  nickname?: string;
-  type: string;
-  gender?: string;
-  color?: string;
-  age?: number;
-  price?: string;
-  description?: string;
-  achievements?: string;
-  father?: string;
-  mother?: string;
-  imageUrl?: string;
-  isAvailable: boolean;
-  isFeatured: boolean;
-}
+import type { Cat } from '@/types';
 
 export default function AdminCatsPage() {
   const { data: session, status } = useSession();

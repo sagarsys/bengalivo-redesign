@@ -10,20 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { Slideshow } from "@/components/slideshow";
 import Head from "next/head";
-
-interface PageContent {
-  id: string;
-  page: string;
-  section: string;
-  title?: string;
-  subtitle?: string;
-  content?: string;
-  imageUrl?: string;
-  buttonText?: string;
-  buttonLink?: string;
-  order: number;
-}
-
+import type { PageContent } from "@/types";
 
 export default function Home() {
   const { t } = useTranslation();
